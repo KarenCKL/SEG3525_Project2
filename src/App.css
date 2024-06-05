@@ -1,38 +1,156 @@
-.App {
-  text-align: center;
+/*** Navbar ***/
+.custom-container {
+  margin-top: 10px;
+  margin-left: 60px !important;
+  margin-right: 70px !important;
+}
+/* change the text in navbar to lowecase */
+.capitalize {
+    text-transform: capitalize !important;
+}
+#basic-nav-dropdown{
+    text-transform: capitalize !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Navbar brand */
+.navbar-brand {
+  color: #a60341 !important;
+  position: relative;
+  margin-left: 10px;
+  font-size: 27px !important;
+  text-transform: uppercase;
+  font-weight: 500 !important;
+}
+/* Navbar links */
+.nav-link {
+  color: #a60341 !important;
+  position: relative;
+  margin-left: 25px;
+  font-size: 18px !important;
+  text-transform: uppercase;
+  font-weight: 500 !important;
+}
+.nav-link:hover {
+  color: #6c757d !important;
+}
+.Contact {
+  width: 175px;
+  font-size: 20px !important;
+}
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
+  clear: both;
+  font-weight: 400;
+  color: var(--bs-dropdown-link-color);
+  text-align: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+  border-radius: var(--bs-dropdown-item-border-radius, 0);
+}
+.dropdown-menu {
+  --bs-dropdown-link-active-bg: #6c757d !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Navbar Toggle menu collapse when minimise screen*/
+.navbar-toggler {
+  border-color: #830032 !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23a60341' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+.navbar-toggler.active .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23a60341' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
+.navbar-toggler {
+  font-size: var(--bs-navbar-toggler-font-size);
+  line-height: 2;
+  color: #830032 !important;
+}
+/* carousel */
+.carousel-caption-custom {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.caption-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-start;
 }
 
-.App-link {
-  color: #61dafb;
+.caption-content h3,
+.caption-content p {
+  margin: 0 0 10px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.caption-content .btn {
+  background-color: #a60341;
+  border: none;
+}
+
+.caption-content .btn:hover {
+  background-color: #6c757d;
+}
+.carousel-caption-custom .bg-overlay {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.25
+  ); /* Adjust the color and opacity as needed */
+  padding: 20px; /* Adjust the padding as needed */
+  border-radius: 5px;
+}
+
+/* Set height for large screens */
+.background {
+  height: 500px;
+}
+
+/* Set height for large screens */
+@media (min-width: 992px) {
+  .background {
+    height: 550px;
   }
-  to {
-    transform: rotate(360deg);
+}
+/*medium and small screens */
+@media (max-width: 992px) {
+  .navbar .navbar-collapse {
+    margin-top: 18px;
+    border-top: 2px solid #a60341;
   }
+  .navbar .navbar-nav .nav-link {
+    padding: 10px 0;
+    margin-left: 0;
+  }
+  #HomeLink {
+    margin-top: 10px;
+  }
+  .Contact {
+    margin-top: 10px;
+  }
+  .background {
+    height: 400px;
+  }
+}
+#bookIdbtn:hover {
+  background-color: #6c757d;
+}
+/* Footer */
+#emailFooter:hover {
+    color: #6c757d !important;
+}
+#phoneFooter:hover {
+    color: #6c757d !important;
 }
