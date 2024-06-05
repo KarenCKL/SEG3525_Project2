@@ -11,7 +11,7 @@ const Footer = () => {
             <Container>
                 <Row>
                     <Col>
-                        <p className='fs-5 text-white'>&copy; 2024 Paradise Hotel. All rights reserved.</p>
+                        <p className='fs-5 text-white'>&copy; 2024 Ottawa Badminton Club. All rights reserved.</p>
                     </Col>
                     <Col>
                         <div style={{ paddingLeft: "100px" }}>

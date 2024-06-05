@@ -7,7 +7,7 @@ const NavBar = () => {
     return (
         <Navbar expand="lg" className="navbar bg-white sticky-top bg-info sticky-top">
             <Container fluid className='custom-container'>
-                <img src={logo} style={{ width: '70px', marginRight: '10px' }} alt="Logo" id="logo"/>
+                <img src={logo} style={{ width: '50px', marginRight: '10px' }} alt="Logo" id="logo"/>
                 <Navbar.Brand as={Link} to='/' className="capitalize" id='name'>Ottawa Badminton Club</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
