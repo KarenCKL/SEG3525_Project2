@@ -6,10 +6,10 @@
 }
 /* change the text in navbar to lowecase */
 .capitalize {
-    text-transform: capitalize !important;
+  text-transform: capitalize !important;
 }
-#basic-nav-dropdown{
-    text-transform: capitalize !important;
+#basic-nav-dropdown {
+  text-transform: capitalize !important;
 }
 
 /* Navbar brand */
@@ -144,13 +144,29 @@
     height: 400px;
   }
 }
+/*small screens */
+@media (max-width: 500px) {
+  .custom-container {
+    margin-top: 10px;
+    margin-left:12px !important;
+    margin-right: 15px !important;
+  }
+  #logo{
+    width: 75px !important;
+    height: 75px !important;
+  }
+  #name{
+    font-size: 24px !important;
+  }
+
+}
 #bookIdbtn:hover {
   background-color: #6c757d;
 }
 /* Footer */
 #emailFooter:hover {
-    color: #6c757d !important;
+  color: #6c757d !important;
 }
 #phoneFooter:hover {
-    color: #6c757d !important;
+  color: #6c757d !important;
 }

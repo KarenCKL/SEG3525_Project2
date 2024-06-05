@@ -5,10 +5,10 @@ import '../App.css';
 
 const NavBar = () => {
     return (
-        <Navbar expand="lg" className="navbar bg-white py-3 px-2 sticky-top bg-info py-3 sticky-top">
+        <Navbar expand="lg" className="navbar bg-white sticky-top bg-info sticky-top">
             <Container fluid className='custom-container'>
-                <img src={logo} style={{ width: '70px', marginRight: '10px' }} alt="Logo" />
-                <Navbar.Brand as={Link} to='/' className="capitalize">Ottawa Badminton Club</Navbar.Brand>
+                <img src={logo} style={{ width: '70px', marginRight: '10px' }} alt="Logo" id="logo"/>
+                <Navbar.Brand as={Link} to='/' className="capitalize" id='name'>Ottawa Badminton Club</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto py-0 pe-5">
