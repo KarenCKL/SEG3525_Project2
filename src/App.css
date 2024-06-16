@@ -114,7 +114,7 @@
 }
 
 .card-fixed-width {
-  width: 600px;
+  width: 500px;
 }
 
 /* Set height for large screens */
@@ -178,6 +178,13 @@
   /* carousel adjustment for small screen */
   .background {
     height: 400px;
+  }
+  .card-fixed-width {
+    width: 350px !important;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+  }
+  .carousel-caption-custom{
+    transform: translate(-10%, -90%) !important;
   }
 }
 #bookIdbtn:hover {

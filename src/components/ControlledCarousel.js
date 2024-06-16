@@ -25,7 +25,7 @@ function ControlledCarousel() {
                         <Card.Body className="d-flex flex-column">
                             <Card.Title className='fs-3 text-start'>Join our Badminton Club</Card.Title>
                             <Card.Text className='fs-5 pb-2 text-start'>Become a member and enjoy exclusive access to our facilities.</Card.Text>
-                            <Link to="/contact" className="btn btn-primary" style={{ width: '150px' }}>Book now</Link>
+                            <Link to="/contact" className="btn btn-primary" style={{ width: '130px' }}>Book now</Link>
                         </Card.Body>
                     </Card>
                 </Carousel.Caption>
@@ -37,7 +37,7 @@ function ControlledCarousel() {
                         <Card.Body className="d-flex flex-column">
                             <Card.Title className='fs-3 text-start' >Learn the Game</Card.Title>
                             <Card.Text className='fs-5 pb-1 text-start'>Explore our comprehensive guides and improve your badminton skills with expert tips and tutorials.</Card.Text>
-                            <Link to="/guides" className="btn btn-primary" style={{ width: '150px' }}>Read Guides</Link>
+                            <Link to="/guides" className="btn btn-primary" style={{ width: '130px' }}>Read Guides</Link>
                         </Card.Body>
                     </Card>
                 </Carousel.Caption>
@@ -49,7 +49,7 @@ function ControlledCarousel() {
                         <Card.Body className="d-flex flex-column">
                             <Card.Title className='fs-3 text-start' >Join the Community</Card.Title>
                             <Card.Text className='fs-5 pb-1 text-start'>Connect with fellow badminton enthusiasts, share your thoughts, and get advice in our forum.</Card.Text>
-                            <Link to="/guides" className="btn btn-primary" style={{ width: '150px' }}>Visit Forum</Link>
+                            <Link to="/guides" className="btn btn-primary" style={{ width: '130px' }}>Visit Forum</Link>
                         </Card.Body>
                     </Card>
                 </Carousel.Caption>
@@ -61,7 +61,7 @@ function ControlledCarousel() {
                         <Card.Body className="d-flex flex-column">
                             <Card.Title className='fs-3 text-start' >Get Equipped</Card.Title>
                             <Card.Text className='fs-5 pb-1 text-start'>Shop for the best badminton equipment and accessories to enhance your game</Card.Text>
-                            <Link to="/guides" className="btn btn-primary" style={{ width: '150px' }}>Visit Shop</Link>
+                            <Link to="/guides" className="btn btn-primary" style={{ width: '130px' }}>Visit Shop</Link>
                         </Card.Body>
                     </Card>
                 </Carousel.Caption>
