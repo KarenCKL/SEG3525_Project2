@@ -146,9 +146,6 @@
     margin-top: 10px;
   }
 
-  .Contact {
-    margin-top: 10px;
-  }
   /* height of carousel */
   .background {
     height: 400px;
@@ -187,9 +184,14 @@
     transform: translate(-10%, -90%) !important;
   }
 }
-#bookIdbtn:hover {
-  background-color: #6c757d;
+#bookIdbtn{
+  margin-right: 20px !important;
+  width: 120px !important;
 }
+#loginIdbtn{
+  width: 120px !important;
+}
+
 /* Footer */
 #emailFooter:hover {
   color: #6c757d !important;

@@ -13,15 +13,16 @@ const NavBar = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto py-0 pe-5">
                         <Nav.Link as={Link} to='/' id="HomeLink" className="capitalize">Home</Nav.Link>
-                        <NavDropdown title="Suscribe" id="basic-nav-dropdown">
-                            <NavDropdown.Item as={Link} to="/activities#indoor">Membership</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to="/activities#outdoor">Coaching</NavDropdown.Item>
+                        <NavDropdown title="Suscription" id="basic-nav-dropdown">
+                            <NavDropdown.Item as={Link} to="/Suscription#membership">Membership</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/Subscription#Coaching">Coaching</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/Subscription#Booking">Booking</NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link as={Link} to='/restaurants' className="capitalize">Guides</Nav.Link>
-                        <Nav.Link as={Link} to='/restaurants' className="capitalize">Forum</Nav.Link>
-                        <Nav.Link as={Link} to='/restaurants' className="capitalize">Shop</Nav.Link>
+                        <Nav.Link as={Link} to='/Guides' className="capitalize">Guides</Nav.Link>
+                        <Nav.Link as={Link} to='/Forum' className="capitalize">Forum</Nav.Link>
                     </Nav>
-                    <Button as={Link} to='/contact' variant="primary" className='Contact text-white py-2 px-4 capitalize' id='bookIdbtn'>Book Now</Button>
+                    <Button as={Link} to='/' variant="primary" className='text-white py-1 px-1 capitalize' id='bookIdbtn'>Join Now</Button>
+                    <Button as={Link} to='/' variant="secondary" className='text-white py-1 px-1 capitalize' id='loginIdbtn'>Login in</Button>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

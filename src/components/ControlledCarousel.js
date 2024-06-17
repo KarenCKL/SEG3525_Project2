@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 import background1 from '../assets/background1.jpeg';
 import background2 from '../assets/background4.jpg';
 import team from '../assets/team.jpg';
-import shop from '../assets/background.png';
+
 
 import '../App.css';
 import { Link } from 'react-router-dom';
@@ -25,7 +25,7 @@ function ControlledCarousel() {
                         <Card.Body className="d-flex flex-column">
                             <Card.Title className='fs-3 text-start'>Join our Badminton Club</Card.Title>
                             <Card.Text className='fs-5 pb-2 text-start'>Become a member and enjoy exclusive access to our facilities.</Card.Text>
-                            <Link to="/contact" className="btn btn-primary" style={{ width: '130px' }}>Book now</Link>
+                            <Link to="/subscribe" className="btn btn-primary" style={{ width: '130px' }}>Join Now</Link>
                         </Card.Body>
                     </Card>
                 </Carousel.Caption>
@@ -49,19 +49,7 @@ function ControlledCarousel() {
                         <Card.Body className="d-flex flex-column">
                             <Card.Title className='fs-3 text-start' >Join the Community</Card.Title>
                             <Card.Text className='fs-5 pb-1 text-start'>Connect with fellow badminton enthusiasts, share your thoughts, and get advice in our forum.</Card.Text>
-                            <Link to="/guides" className="btn btn-primary" style={{ width: '130px' }}>Visit Forum</Link>
-                        </Card.Body>
-                    </Card>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img src={shop} style={{ width: '100%' }} alt="background of a badminton guide" className='background' />
-                <Carousel.Caption className="carousel-caption-custom">
-                    <Card className="bg-overlay text-white card-fixed-width">
-                        <Card.Body className="d-flex flex-column">
-                            <Card.Title className='fs-3 text-start' >Get Equipped</Card.Title>
-                            <Card.Text className='fs-5 pb-1 text-start'>Shop for the best badminton equipment and accessories to enhance your game</Card.Text>
-                            <Link to="/guides" className="btn btn-primary" style={{ width: '130px' }}>Visit Shop</Link>
+                            <Link to="/forum" className="btn btn-primary" style={{ width: '130px' }}>Visit Forum</Link>
                         </Card.Body>
                     </Card>
                 </Carousel.Caption>
