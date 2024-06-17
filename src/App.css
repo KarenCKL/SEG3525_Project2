@@ -200,3 +200,14 @@
 #phoneFooter:hover {
   color: #6c757d !important;
 }
+/* Facette */
+.facette{
+    height: 700px !important;
+}
+ul {
+    list-style-type: none;
+}
+.chapter{
+    font-weight: bold;
+}
+  

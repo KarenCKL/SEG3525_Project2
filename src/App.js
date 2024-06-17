@@ -3,6 +3,7 @@ import './App.css';
 import './App.scss'
 import Navbar from './components/Navbar';
 import Home from './pages/home';
+import Guides from './pages/guides';
 import Footer from './components/Footer';
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
                 <div>
                     <Routes>
                         <Route path="/" element={<Home />} />
+                        <Route path="/guides" element={<Guides />} />
                     </Routes>
                 </div>
                 <Footer />
