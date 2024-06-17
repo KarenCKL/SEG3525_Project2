@@ -22,7 +22,7 @@ const NavBar = () => {
                         <Nav.Link as={Link} to='/Forum' className="capitalize">Forum</Nav.Link>
                     </Nav>
                     <Button as={Link} to='/' variant="primary" className='text-white py-1 px-1 capitalize' id='bookIdbtn'>Join Now</Button>
-                    <Button as={Link} to='/' variant="secondary" className='text-white py-1 px-1 capitalize' id='loginIdbtn'>Login in</Button>
+                    <Button as={Link} to='/' variant="secondary" className='text-white py-1 px-1 capitalize' id='loginIdbtn'>Login</Button>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

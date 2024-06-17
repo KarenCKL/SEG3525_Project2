@@ -178,10 +178,11 @@
   }
   .card-fixed-width {
     width: 350px !important;
-    background-color: rgba(0, 0, 0, 0.5) !important;
+   
+    background-color: rgba(0, 0, 0, 0.30) !important;
   }
   .carousel-caption-custom{
-    transform: translate(-10%, -90%) !important;
+    transform: translate(-8%, -90%) !important;
   }
 }
 #bookIdbtn{
