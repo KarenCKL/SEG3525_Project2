@@ -124,9 +124,12 @@
 }
 
 /* Set height for large screens */
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   .background {
     height: 550px;
+  }
+  .guide{
+    font-size: larger !important;
   }
 }
 
@@ -202,7 +205,7 @@
 }
 /* Facette */
 .facette{
-    height: 1030px !important;
+    height: 1050px !important;
 }
 ul {
     list-style-type: none;
@@ -223,3 +226,4 @@ ul {
 .chapter1{
     background-color: #e9ecef !important;
 }
+

@@ -87,7 +87,7 @@ export default function Facette() {
                     <img src={guide} style={{width:"100%"}} alt="" />
                     </Col>
                     <Col md={8}>
-                        <p className='mt-4 fs-5'>Welcome to "The Ultimate Badminton Guide," designed to enhance your badminton skills and elevate your game. This comprehensive guide is organized into multiple chapters covering various aspects of the sport. Each chapter focuses on specific skills and strategies, allowing you to select and explore topics that interest you the most. Whether you're looking to refine your technique, master advanced tactics, or improve your mental game, this guide provides the tools and insights to help you achieve your badminton goals effectively.
+                        <p className='guide mt-lg-1 mt-xl-4 mt-3 ms-2'>Welcome to "The Ultimate Badminton Guide," designed to enhance your badminton skills and elevate your game. This comprehensive guide is organized into multiple chapters covering various aspects of the sport. Each chapter focuses on specific skills and strategies, allowing you to select and explore topics that interest you the most. Whether you're looking to refine your technique, master advanced tactics, or improve your mental game, this guide provides the tools and insights to help you achieve your badminton goals effectively.
                     </p>
                     </Col>
                 </Row>
@@ -183,22 +183,10 @@ export default function Facette() {
                             </Card.Body>
                         </Card>
                     </Col>
-                    <Col>
+                    <Col md={8}>
                         <Row>
-                            <Col md={11} className='ms-5'>
-                                <Card className='mt-4 mb-4 chapter1'>
-                                    <Card.Body>
-                                        <Card.Title>Boundaries</Card.Title>
-                                        <Card.Text>
-                                            The shuttlecock is out of bounds if it lands outside of the boundary lines of the court, or if it touches the ceiling or any other object above the court. The shuttlecock is also out of bounds
-                                            if it lands on the line marking the boundary of the court.
-                                        </Card.Text>
-                                        <Button variant="primary">Read More</Button>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                            <Col md={11} className='ms-5'>
-                                <Card className='mb-4 chapter1'>
+                            <Col className='ms-md-4 me-md-3'>
+                                <Card className='mt-md-4 mb-3 mb-md-4 chapter1'>
                                     <Card.Body>
                                         <Card.Title>Boundaries</Card.Title>
                                         <Card.Text>
@@ -211,20 +199,8 @@ export default function Facette() {
                             </Col>
                         </Row>
                         <Row>
-                            <Col md={11} className='ms-5'>
-                                <Card className='mb-4 chapter1'>
-                                    <Card.Body>
-                                        <Card.Title>Boundaries</Card.Title>
-                                        <Card.Text>
-                                            The shuttlecock is out of bounds if it lands outside of the boundary lines of the court, or if it touches the ceiling or any other object above the court. The shuttlecock is also out of bounds
-                                            if it lands on the line marking the boundary of the court.
-                                        </Card.Text>
-                                        <Button variant="primary">Read More</Button>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                            <Col md={11} className='ms-5'>
-                                <Card className='mb-4 chapter1'>
+                        <Col className='ms-md-4 me-md-3'>
+                                <Card className='mb-3 mb-md-4 chapter1'>
                                     <Card.Body>
                                         <Card.Title>Boundaries</Card.Title>
                                         <Card.Text>
@@ -237,8 +213,8 @@ export default function Facette() {
                             </Col>
                         </Row>
                         <Row>
-                            <Col md={11} className='ms-5'>
-                                <Card className='mb-4 chapter1'>
+                        <Col className='ms-md-4 me-md-3'>
+                                <Card className='mb-3 mb-md-4 chapter1'>
                                     <Card.Body>
                                         <Card.Title>Boundaries</Card.Title>
                                         <Card.Text>
