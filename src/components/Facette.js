@@ -2,6 +2,7 @@
 import * as React from 'react'
 import { Container, Row, Col, Card, Form, Button, Pagination } from 'react-bootstrap'
 import { useState } from 'react';
+import guide from '../assets/guide.jpeg';
 
 export default function Facette() {
     const initialCheckboxesChapter1 = [
@@ -81,9 +82,16 @@ export default function Facette() {
         <div>
             <Container>
                 <h3 className='text-info text-center mt-4 fs-3'>The Ultimate Badminton Guide</h3>
-                <p className='mt-3'>Welcome to "The Ultimate Badminton Guide," designed to enhance your badminton skills and elevate your game. This comprehensive guide is organized into multiple chapters covering various aspects of the sport. Each chapter focuses on specific skills and strategies, allowing you to select and explore topics that interest you the most. Whether you're looking to refine your technique, master advanced tactics, or improve your mental game, this guide provides the tools and insights to help you achieve your badminton goals effectively.
-                </p>
-                <Row>
+                <Row className='mt-4'>
+                    <Col md={4}>
+                    <img src={guide} style={{width:"100%"}} alt="" />
+                    </Col>
+                    <Col md={8}>
+                        <p className='mt-4 fs-5'>Welcome to "The Ultimate Badminton Guide," designed to enhance your badminton skills and elevate your game. This comprehensive guide is organized into multiple chapters covering various aspects of the sport. Each chapter focuses on specific skills and strategies, allowing you to select and explore topics that interest you the most. Whether you're looking to refine your technique, master advanced tactics, or improve your mental game, this guide provides the tools and insights to help you achieve your badminton goals effectively.
+                    </p>
+                    </Col>
+                </Row>
+                <Row className='mt-3'>
                     <Col md={4}>
                         <Card className='facette mt-4 mb-5' >
                             <Card.Body>
