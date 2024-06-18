@@ -202,12 +202,24 @@
 }
 /* Facette */
 .facette{
-    height: 700px !important;
+    height: 1030px !important;
 }
 ul {
     list-style-type: none;
+    padding-left: 0% !important;
 }
 .chapter{
     font-weight: bold;
 }
-  
+.form-check-input {
+    box-shadow: none !important;
+    outline: none !important;
+    border-color: #6c757d !important;
+}
+.form-check-input:checked {
+    background-color: #6c757d !important;
+    border-color:#6c757d !important;
+} 
+.chapter1{
+    background-color: #bcc0c3 !important;
+}
