@@ -108,8 +108,8 @@
     0,
     0,
     0
-  ); /* Adjust the color and opacity as needed */
-  padding: 20px; /* Adjust the padding as needed */
+  ); 
+  padding: 20px;
   border: none;
 }
 
@@ -123,71 +123,7 @@
   height: 500px;
 }
 
-/* Set height for large screens */
-@media (min-width: 1024px) {
-  .background {
-    height: 550px;
-  }
-  .guide{
-    font-size: larger !important;
-  }
-}
-
-/* medium and small screens */
-@media (max-width: 992px) {
-  .navbar .navbar-collapse {
-    margin-top: 18px;
-    border-top: 1px solid #a60341;
-  }
-
-  .navbar .navbar-nav .nav-link {
-    padding: 10px 0;
-    margin-left: 0;
-  }
-
-  #HomeLink {
-    margin-top: 10px;
-  }
-
-  /* height of carousel */
-  .background {
-    height: 400px;
-  }
-  .card-fixed-width {
-    width: 400px !important;
-  }
-  .carousel-caption-custom{
-    transform: translate(-8%, -65%) !important;
-  }
-}
-
-/*small screens */
-@media (max-width: 500px) {
-  .custom-container {
-    margin-top: 10px;
-    margin-left: 12px !important;
-    margin-right: 15px !important;
-  }
-  #logo {
-    width: 75px !important;
-    height: 75px !important;
-  }
-  #name {
-    font-size: 24px !important;
-  }
-  /* carousel adjustment for small screen */
-  .background {
-    height: 400px;
-  }
-  .card-fixed-width {
-    width: 350px !important;
-   
-    background-color: rgba(0, 0, 0, 0.30) !important;
-  }
-  .carousel-caption-custom{
-    transform: translate(-8%, -90%) !important;
-  }
-}
+/*Join and login buttons */
 #bookIdbtn{
   margin-right: 20px !important;
   width: 120px !important;
@@ -226,4 +162,85 @@ ul {
 .chapter1{
     background-color: #e9ecef !important;
 }
+/*pagination*/
+.page-link {
+color: #830032 !important;
+}
+.pagination .page-item:focus,
+.pagination .page-link:focus {
+    outline: 1px solid #830032;
+    box-shadow: 0 0 0 2px rgba(131, 0, 50, 0.5);
+}
+.pagination .page-item.active .page-link {
+    color: #fff;
+    background-color:#eaeff3c0;
+    border-color: #830032;
+}   
 
+
+/* large screens */
+@media (min-width: 1024px) {
+    /* height of carousel */
+ .background {
+   height: 550px;
+ }
+ .guide{
+   font-size: larger !important;
+ }
+}
+
+/* medium and small screens */
+@media (max-width: 992px) {
+ .navbar .navbar-collapse {
+   margin-top: 18px;
+   border-top: 1px solid #a60341;
+ }
+
+ .navbar .navbar-nav .nav-link {
+   padding: 10px 0;
+   margin-left: 0;
+ }
+
+ #HomeLink {
+   margin-top: 10px;
+ }
+
+ /* height of carousel */
+ .background {
+   height: 400px;
+ }
+ .card-fixed-width {
+   width: 400px !important;
+ }
+ .carousel-caption-custom{
+   transform: translate(-8%, -65%) !important;
+ }
+}
+
+/*small screens */
+@media (max-width: 500px) {
+ .custom-container {
+   margin-top: 10px;
+   margin-left: 12px !important;
+   margin-right: 15px !important;
+ }
+ #logo {
+   width: 75px !important;
+   height: 75px !important;
+ }
+ #name {
+   font-size: 24px !important;
+ }
+ /* carousel adjustment for small screen */
+ .background {
+   height: 400px;
+ }
+ .card-fixed-width {
+   width: 350px !important;
+  
+   background-color: rgba(0, 0, 0, 0.30) !important;
+ }
+ .carousel-caption-custom{
+   transform: translate(-8%, -90%) !important;
+ }
+}

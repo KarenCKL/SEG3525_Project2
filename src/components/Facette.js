@@ -5,6 +5,8 @@ import { useState } from 'react';
 import guide from '../assets/guide.jpeg';
 
 export default function Facette() {
+
+    // Initial state for checkboxes in each chapter
     const initialCheckboxesChapter1 = [
         { isChecked: false, message: 'Boundaries' },
         { isChecked: false, message: 'Double play' },
@@ -12,6 +14,13 @@ export default function Facette() {
         { isChecked: false, message: 'Scoring' },
         { isChecked: false, message: 'Serves' },
     ];
+    const contentMapping = {
+        'Boundaries': 'The shuttlecock is out of bounds if it lands outside of the boundary lines of the court, or if it touches the ceiling or any other object above the court. The shuttlecock is also out of bounds if it lands on the line marking the boundary of the court.',
+        'Double play': 'In doubles play (where there are two players on each side), the serving order must be rotated after each game. Players must serve from the right service court when the score is even, and from the left service court when the score is odd.',
+        'Faults': 'A fault is committed when a player violates one of the rules of the game. Examples of faults include serving incorrectly, hitting the shuttlecock out of bounds, or hitting the shuttlecock before it has crossed the net. If a player commits a fault, their opponent wins the rally.',
+        'Scoring': 'A rally is won when the shuttlecock lands in your opponent’s court, or when your opponent hits the shuttlecock out of bounds or into the net. Points can only be scored by the serving side, and the first side to reach 21 points (with a margin of at least two points) wins the game.',
+        'Serves': 'A serve must be hit diagonally across the court, and the shuttlecock must be hit below waist height on the serve. The server has two serves, and the serve must be returned by the receiver. If the receiver is unable to return the serve, the server wins the rally.',
+    };
 
     const initialCheckboxesChapter2 = [
         { isChecked: false, message: 'Court sprints' },
@@ -36,47 +45,139 @@ export default function Facette() {
         { isChecked: false, message: 'Visualize success' },
     ];
 
-
+    const [currentPage, setCurrentPage] = useState(1);
     const [checkboxesChapter1, setCheckboxesChapter1] = useState(initialCheckboxesChapter1);
     const [checkboxesChapter2, setCheckboxesChapter2] = useState(initialCheckboxesChapter2);
     const [checkboxesChapter3, setCheckboxesChapter3] = useState(initialCheckboxesChapter3);
     const [checkboxesChapter4, setCheckboxesChapter4] = useState(initialCheckboxesChapter4);
     const [checkboxesChapter5, setCheckboxesChapter5] = useState(initialCheckboxesChapter5);
 
-    const handleCheckboxChangeChapter1 = (index) => (event) => {
-        const newCheckboxes = [...checkboxesChapter1];
+    // Function to handle checkbox change for each chapter
+    const handleCheckboxChange = (chapter, index) => (event) => {
+        const setCheckboxes = {
+            1: setCheckboxesChapter1,
+            2: setCheckboxesChapter2,
+            3: setCheckboxesChapter3,
+            4: setCheckboxesChapter4,
+            5: setCheckboxesChapter5,
+        }[chapter];
+
+        const checkboxes = {
+            1: checkboxesChapter1,
+            2: checkboxesChapter2,
+            3: checkboxesChapter3,
+            4: checkboxesChapter4,
+            5: checkboxesChapter5,
+        }[chapter];
+
+        const newCheckboxes = [...checkboxes];
         newCheckboxes[index].isChecked = event.target.checked;
-        setCheckboxesChapter1(newCheckboxes);
+        setCheckboxes(newCheckboxes);
     };
 
-    const handleCheckboxChangeChapter2 = (index) => (event) => {
-        const newCheckboxes = [...checkboxesChapter2];
-        newCheckboxes[index].isChecked = event.target.checked;
-        setCheckboxesChapter2(newCheckboxes);
-    };
-    const handleCheckboxChangeChapter3 = (index) => (event) => {
-        const newCheckboxes = [...checkboxesChapter3];
-        newCheckboxes[index].isChecked = event.target.checked;
-        setCheckboxesChapter3(newCheckboxes);
-    };
-    const handleCheckboxChangeChapter4 = (index) => (event) => {
-        const newCheckboxes = [...checkboxesChapter4];
-        newCheckboxes[index].isChecked = event.target.checked;
-        setCheckboxesChapter4(newCheckboxes);
-    };
-    const handleCheckboxChangeChapter5 = (index) => (event) => {
-        const newCheckboxes = [...checkboxesChapter5];
-        newCheckboxes[index].isChecked = event.target.checked;
-        setCheckboxesChapter5(newCheckboxes);
-    };
-
-    // Function to reset the checkboxes for all chapters
     const handleUncheckAll = () => {
         setCheckboxesChapter1(initialCheckboxesChapter1);
         setCheckboxesChapter2(initialCheckboxesChapter2);
         setCheckboxesChapter3(initialCheckboxesChapter3);
         setCheckboxesChapter4(initialCheckboxesChapter4);
         setCheckboxesChapter5(initialCheckboxesChapter5);
+        setCurrentPage(1);
+    };
+
+    //Function to handle Pagination Click
+    const handlePageChange = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+
+    // Content for different pages
+    const renderContentForPage = (pageNumber) => {
+        switch (pageNumber) {
+            case 1:
+                // Filter out checked checkboxes for Chapter 1
+                const filteredChapter1 = checkboxesChapter1.filter(checkbox => checkbox.isChecked);
+
+                return (
+                    <>
+                        {filteredChapter1.length > 0 ? (
+                            <>
+                                {filteredChapter1.map((checkbox, index) => (
+                                    <Row key={index} id={checkbox.message.replace(/\s+/g, '-').toLowerCase()}>
+                                        <Col className='ms-md-4 me-md-3'>
+                                            <Card className='mt-md-4 mb-3 mb-md-4 chapter1'>
+                                                <Card.Body>
+                                                    <Card.Title>{checkbox.message}</Card.Title>
+                                                    <Card.Text>
+                                                        {checkbox.isChecked ? contentMapping[checkbox.message] : ''}
+                                                    </Card.Text>
+                                                    <Button variant="primary">Read More</Button>
+                                                </Card.Body>
+                                            </Card>
+                                        </Col>
+                                    </Row>
+                                ))}
+                            </>
+                        ) : (
+                            <>
+                                {initialCheckboxesChapter1.map((checkbox, index) => (
+                                    <Row key={index} id={checkbox.message.replace(/\s+/g, '-').toLowerCase()}>
+                                        <Col className='ms-md-4 me-md-3'>
+                                            <Card className='mt-md-4 mb-3 mb-md-4 chapter1'>
+                                                <Card.Body>
+                                                    <Card.Title>{checkbox.message}</Card.Title>
+                                                    <Card.Text>
+                                                        {contentMapping[checkbox.message]}
+                                                    </Card.Text>
+                                                    <Button variant="primary">Read More</Button>
+                                                </Card.Body>
+                                            </Card>
+                                        </Col>
+                                    </Row>
+                                ))}
+                            </>
+                        )}
+                    </>
+                );
+            case 2:
+                return (
+                    <>
+                        <Row id="Court">
+                            <Col className='ms-md-4 me-md-3'>
+                                <Card className='mt-md-4 mb-3 mb-md-4 chapter1'>
+                                    <Card.Body>
+                                        <Card.Title>Court Sprints</Card.Title>
+                                        <Card.Text>
+                                            Sprint from one end of the court to the other, focusing on quick, light steps. This drill will help you improve your overall speed and endurance.
+                                        </Card.Text>
+                                        <Button variant="primary">Read More</Button>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        </Row>
+
+                    </>
+                );
+            case 3:
+                return (
+                    <>
+                        <Row>
+                            <Col className='ms-md-4 me-md-3'>
+                                <Card className='mt-md-4 mb-3 mb-md-4 chapter1'>
+                                    <Card.Body>
+                                        <Card.Title>Learn to Play at Different Speeds</Card.Title>
+                                        <Card.Text>
+                                            Practicing at different speeds can help you become more adaptable during matches. Try playing rallies at various speeds to enhance your reaction time and adaptability.
+                                        </Card.Text>
+                                        <Button variant="primary">Read More</Button>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        </Row>
+                    </>
+                );
+
+            default:
+                return null;
+        }
     };
     return (
         <div>
@@ -84,11 +185,11 @@ export default function Facette() {
                 <h3 className='text-info text-center mt-4 fs-3'>The Ultimate Badminton Guide</h3>
                 <Row className='mt-4'>
                     <Col md={4}>
-                    <img src={guide} style={{width:"100%"}} alt="" />
+                        <img src={guide} style={{ width: "100%" }} alt="" />
                     </Col>
                     <Col md={8}>
                         <p className='guide mt-lg-1 mt-xl-4 mt-3 ms-2'>Welcome to "The Ultimate Badminton Guide," designed to enhance your badminton skills and elevate your game. This comprehensive guide is organized into multiple chapters covering various aspects of the sport. Each chapter focuses on specific skills and strategies, allowing you to select and explore topics that interest you the most. Whether you're looking to refine your technique, master advanced tactics, or improve your mental game, this guide provides the tools and insights to help you achieve your badminton goals effectively.
-                    </p>
+                        </p>
                     </Col>
                 </Row>
                 <Row className='mt-3'>
@@ -111,7 +212,7 @@ export default function Facette() {
                                                     id={`checkbox-ch1-${index}`}
                                                     label={checkbox.message}
                                                     checked={checkbox.isChecked}
-                                                    onChange={handleCheckboxChangeChapter1(index)}
+                                                    onChange={handleCheckboxChange(1, index)}
                                                 />
                                             </li>
                                         ))}
@@ -127,7 +228,7 @@ export default function Facette() {
                                                     id={`checkbox-ch2-${index}`}
                                                     label={checkbox.message}
                                                     checked={checkbox.isChecked}
-                                                    onChange={handleCheckboxChangeChapter2(index)}
+                                                    onChange={handleCheckboxChange(2, index)}
                                                 />
                                             </li>
                                         ))}
@@ -142,7 +243,7 @@ export default function Facette() {
                                                     id={`checkbox-ch3-${index}`}
                                                     label={checkbox.message}
                                                     checked={checkbox.isChecked}
-                                                    onChange={handleCheckboxChangeChapter3(index)}
+                                                    onChange={handleCheckboxChange(3, index)}
                                                 />
                                             </li>
                                         ))}
@@ -158,7 +259,7 @@ export default function Facette() {
                                                     id={`checkbox-ch4-${index}`}
                                                     label={checkbox.message}
                                                     checked={checkbox.isChecked}
-                                                    onChange={handleCheckboxChangeChapter4(index)}
+                                                    onChange={handleCheckboxChange(4, index)}
                                                 />
                                             </li>
                                         ))}
@@ -174,7 +275,7 @@ export default function Facette() {
                                                     id={`checkbox-ch4-${index}`}
                                                     label={checkbox.message}
                                                     checked={checkbox.isChecked}
-                                                    onChange={handleCheckboxChangeChapter5(index)}
+                                                    onChange={handleCheckboxChange(5, index)}
                                                 />
                                             </li>
                                         ))}
@@ -184,58 +285,27 @@ export default function Facette() {
                         </Card>
                     </Col>
                     <Col md={8}>
-                        <Row>
-                            <Col className='ms-md-4 me-md-3'>
-                                <Card className='mt-md-4 mb-3 mb-md-4 chapter1'>
-                                    <Card.Body>
-                                        <Card.Title>Boundaries</Card.Title>
-                                        <Card.Text>
-                                            The shuttlecock is out of bounds if it lands outside of the boundary lines of the court, or if it touches the ceiling or any other object above the court. The shuttlecock is also out of bounds
-                                            if it lands on the line marking the boundary of the court.
-                                        </Card.Text>
-                                        <Button variant="primary">Read More</Button>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                        </Row>
-                        <Row>
-                        <Col className='ms-md-4 me-md-3'>
-                                <Card className='mb-3 mb-md-4 chapter1'>
-                                    <Card.Body>
-                                        <Card.Title>Boundaries</Card.Title>
-                                        <Card.Text>
-                                            The shuttlecock is out of bounds if it lands outside of the boundary lines of the court, or if it touches the ceiling or any other object above the court. The shuttlecock is also out of bounds
-                                            if it lands on the line marking the boundary of the court.
-                                        </Card.Text>
-                                        <Button variant="primary">Read More</Button>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                        </Row>
-                        <Row>
-                        <Col className='ms-md-4 me-md-3'>
-                                <Card className='mb-3 mb-md-4 chapter1'>
-                                    <Card.Body>
-                                        <Card.Title>Boundaries</Card.Title>
-                                        <Card.Text>
-                                            The shuttlecock is out of bounds if it lands outside of the boundary lines of the court, or if it touches the ceiling or any other object above the court. The shuttlecock is also out of bounds
-                                            if it lands on the line marking the boundary of the court.
-                                        </Card.Text>
-                                        <Button variant="primary">Read More</Button>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                        </Row>
                         <div>
                             <Pagination className='d-flex justify-content-center mt-4'>
-                                <Pagination.Prev />
-                                <Pagination.Item>{1}</Pagination.Item>
-                                <Pagination.Item>{2}</Pagination.Item>
-                                <Pagination.Item>{3}</Pagination.Item>
-                                <Pagination.Item>{4}</Pagination.Item>
-                                <Pagination.Item>{5}</Pagination.Item>
-                                <Pagination.Next />
+                                <Pagination.Prev
+                                    onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
+                                />
+                                {[1, 2, 3, 4, 5].map((page) => (
+                                    <Pagination.Item
+                                        key={page}
+                                        active={page === currentPage}
+                                        onClick={() => handlePageChange(page)}
+                                    >
+                                        {page}
+                                    </Pagination.Item>
+                                ))}
+                                <Pagination.Next
+                                    onClick={() => handlePageChange(Math.min(currentPage + 1, 5))}
+                                />
                             </Pagination>
+                        </div>
+                        <div>
+                            {renderContentForPage(currentPage)}
                         </div>
                     </Col>
                 </Row>
