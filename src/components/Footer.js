@@ -16,7 +16,7 @@ const Footer = () => {
                     <Col>
                         <div style={{ paddingLeft: "100px" }}>
                             <p className='text-white'>Email: <a href="mailto:info@badmintonClub.ca" className="text-white" id='emailFooter'>info@badmintonClub.ca</a></p>
-                            <p className='text-white'>Tel: <a href="+123456789" className="text-white" id='phoneFooter'>+1 (234) 567-89</a>
+                            <p className='text-white'>Tel: <a href="+123456789" className="text-white" id='phoneFooter'>+1 (234) 567-890</a>
                             </p>
                         </div>
                     </Col>
@@ -24,7 +24,7 @@ const Footer = () => {
                         <div style={{ paddingLeft: "100px" }}>
                             <p className='fs-5 mb-0 text-white'>Follow us on:</p>
                         </div>
-                        <div className='mt-2' style={{ paddingLeft: "150px" }}>
+                        <div className='mt-2' style={{ paddingLeft: "120px" }}>
                             <img src={facebook} alt="facebook icon" className="img-fluid ms-3" style={{ width: "25px", height: "25px", cursor: "pointer" }} href="" />
                             <img src={instagram} alt="instagram icon" className="img-fluid ms-3" style={{ width: "25px", height: "25px", cursor: "pointer" }} href="" />
                             <img src={twitterX} alt="twitterX icon" className="img-fluid ms-3" style={{ width: "25px", height: "30px", cursor: "pointer" }} href="" />

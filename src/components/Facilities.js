@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSwimmingPool, faWifi, faCar, faWheelchairAlt} from '@fortawesome/free-solid-svg-icons';
+import { faWifi, faWheelchair, faParking, faRestroom} from '@fortawesome/free-solid-svg-icons';
 export default function Facilities() {
     return (
         <div>
@@ -12,31 +12,31 @@ export default function Facilities() {
                     </div>
                     <Col lg={3} sm={6}>
                         <div className="d-flex justify-content-center">
-                            <FontAwesomeIcon icon={faCar} size='3x' className="mb-3 mt-2" style={{ color: '#a60341' }} />
+                            <FontAwesomeIcon icon={faParking} size='3x' className="mb-3 mt-2" style={{ color: '#a60341' }} />
                         </div>
-                        <h5 className='text-center'></h5>
-                        <p className='text-center'>Indoor parking is available onsite with unlimited in and out privileges.</p>
+                        <h5 className='text-center'>Free Parking</h5>
+                        <p className='text-center Font'>We offer free parking for all guests. Our parking lot is secure and well-lit.</p>
                     </Col>
                     <Col lg={3} sm={6}>
                         <div className="d-flex justify-content-center">
-                            <FontAwesomeIcon icon={faWheelchairAlt} size='3x' className="mb-3 mt-2" style={{ color: '#a60341' }} />
+                            <FontAwesomeIcon icon={faWheelchair} size='3x' className="mb-3 mt-2" style={{ color: '#a60341' }} />
                         </div>
                         <h5 className='text-center'>Wheelchair Accessible</h5>
-                        <p className='text-center'> Our hotel is wheelchair accessible to ensure convenience for all guests.</p>
+                        <p className='text-center Font'> Our club is wheelchair accessible to ensure convenience for all guests.</p>
                     </Col>
                     <Col lg={3} sm={6}>
                         <div className="d-flex justify-content-center">
                             <FontAwesomeIcon icon={faWifi} size='3x' className="mb-3 mt-2" style={{ color: '#a60341' }} />
                         </div>
                         <h5 className='text-center'>Free Wifi</h5>
-                        <p className='text-center'></p>
+                        <p className='text-center Font'>We offer free high speed internet to all guests.</p>
                     </Col>
                     <Col lg={3} sm={6}>
                         <div className="d-flex justify-content-center">
-                            <FontAwesomeIcon icon={faSwimmingPool} size='3x' className="mb-3 mt-2" style={{ color: '#a60341' }} />
+                            <FontAwesomeIcon icon={faRestroom} size='3x' className="mb-3 mt-2" style={{ color: '#a60341' }} />
                         </div>
-                        <h5 className='text-center'>Swimming Pool</h5>
-                        <p className='text-center'> Our swimming pool is open to all guests. It is a great place to relax and unwind.</p>
+                        <h5 className='text-center'>Changing Room</h5>
+                        <p className='text-center Font'>We offer changing rooms for guests to freshen up after a game.</p>
                     </Col>
                 </Row>
             </Container>
