@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import * as React from 'react'
 import { Container, Row, Col, Card, Form, Button, Pagination } from 'react-bootstrap'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import guide from '../assets/guide.jpeg';
 
 export default function Facette() {
@@ -14,14 +14,6 @@ export default function Facette() {
         { isChecked: false, message: 'Scoring' },
         { isChecked: false, message: 'Serves' },
     ];
-    const contentMapping = {
-        'Boundaries': 'The shuttlecock is out of bounds if it lands outside of the boundary lines of the court, or if it touches the ceiling or any other object above the court. The shuttlecock is also out of bounds if it lands on the line marking the boundary of the court.',
-        'Double play': 'In doubles play (where there are two players on each side), the serving order must be rotated after each game. Players must serve from the right service court when the score is even, and from the left service court when the score is odd.',
-        'Faults': 'A fault is committed when a player violates one of the rules of the game. Examples of faults include serving incorrectly, hitting the shuttlecock out of bounds, or hitting the shuttlecock before it has crossed the net. If a player commits a fault, their opponent wins the rally.',
-        'Scoring': 'A rally is won when the shuttlecock lands in your opponent’s court, or when your opponent hits the shuttlecock out of bounds or into the net. Points can only be scored by the serving side, and the first side to reach 21 points (with a margin of at least two points) wins the game.',
-        'Serves': 'A serve must be hit diagonally across the court, and the shuttlecock must be hit below waist height on the serve. The server has two serves, and the serve must be returned by the receiver. If the receiver is unable to return the serve, the server wins the rally.',
-    };
-
     const initialCheckboxesChapter2 = [
         { isChecked: false, message: 'Court sprints' },
         { isChecked: false, message: 'Lunges' },
@@ -44,6 +36,14 @@ export default function Facette() {
         { isChecked: false, message: 'Take deep breaths' },
         { isChecked: false, message: 'Visualize success' },
     ];
+    //Data for each chapter
+    const contentMapping = {
+        'Boundaries': 'The shuttlecock is out of bounds if it lands outside of the boundary lines of the court, or if it touches the ceiling or any other object above the court. The shuttlecock is also out of bounds if it lands on the line marking the boundary of the court.',
+        'Double play': 'In doubles play (where there are two players on each side), the serving order must be rotated after each game. Players must serve from the right service court when the score is even, and from the left service court when the score is odd.',
+        'Faults': 'A fault is committed when a player violates one of the rules of the game. Examples of faults include serving incorrectly, hitting the shuttlecock out of bounds, or hitting the shuttlecock before it has crossed the net. If a player commits a fault, their opponent wins the rally.',
+        'Scoring': 'A rally is won when the shuttlecock lands in your opponent’s court, or when your opponent hits the shuttlecock out of bounds or into the net. Points can only be scored by the serving side, and the first side to reach 21 points (with a margin of at least two points) wins the game.',
+        'Serves': 'A serve must be hit diagonally across the court, and the shuttlecock must be hit below waist height on the serve. The server has two serves, and the serve must be returned by the receiver. If the receiver is unable to return the serve, the server wins the rally.',
+    };
 
     const [currentPage, setCurrentPage] = useState(1);
     const [checkboxesChapter1, setCheckboxesChapter1] = useState(initialCheckboxesChapter1);
@@ -51,6 +51,19 @@ export default function Facette() {
     const [checkboxesChapter3, setCheckboxesChapter3] = useState(initialCheckboxesChapter3);
     const [checkboxesChapter4, setCheckboxesChapter4] = useState(initialCheckboxesChapter4);
     const [checkboxesChapter5, setCheckboxesChapter5] = useState(initialCheckboxesChapter5);
+    const [anyCheckboxChecked, setAnyCheckboxChecked] = useState(false);
+
+    //Function to hide pagination when checkboxes are selected
+    useEffect(() => {
+        const isAnyChecked = [
+            ...checkboxesChapter1,
+            ...checkboxesChapter2,
+            ...checkboxesChapter3,
+            ...checkboxesChapter4,
+            ...checkboxesChapter5
+        ].some(checkbox => checkbox.isChecked);
+        setAnyCheckboxChecked(isAnyChecked);
+    }, [checkboxesChapter1, checkboxesChapter2, checkboxesChapter3, checkboxesChapter4, checkboxesChapter5]);
 
     // Function to handle checkbox change for each chapter
     const handleCheckboxChange = (chapter, index) => (event) => {
@@ -272,7 +285,7 @@ export default function Facette() {
                                                 <Form.Check
                                                     className='mt-2 ms-4'
                                                     type="checkbox"
-                                                    id={`checkbox-ch4-${index}`}
+                                                    id={`checkbox-ch5-${index}`}
                                                     label={checkbox.message}
                                                     checked={checkbox.isChecked}
                                                     onChange={handleCheckboxChange(5, index)}
@@ -286,27 +299,32 @@ export default function Facette() {
                     </Col>
                     <Col md={8}>
                         <div>
-                            <Pagination className='d-flex justify-content-center mt-4'>
-                                <Pagination.Prev
-                                    onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
-                                />
-                                {[1, 2, 3, 4, 5].map((page) => (
-                                    <Pagination.Item
-                                        key={page}
-                                        active={page === currentPage}
-                                        onClick={() => handlePageChange(page)}
-                                    >
-                                        {page}
-                                    </Pagination.Item>
-                                ))}
-                                <Pagination.Next
-                                    onClick={() => handlePageChange(Math.min(currentPage + 1, 5))}
-                                />
-                            </Pagination>
-                        </div>
-                        <div>
                             {renderContentForPage(currentPage)}
                         </div>
+                        <div>
+                            {!anyCheckboxChecked && (
+                                <div>
+                                    <Pagination className='d-flex justify-content-center mt-4'>
+                                        <Pagination.Prev
+                                            onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
+                                        />
+                                        {[1, 2, 3].map((page) => (
+                                            <Pagination.Item
+                                                key={page}
+                                                active={page === currentPage}
+                                                onClick={() => handlePageChange(page)}
+                                            >
+                                                {page}
+                                            </Pagination.Item>
+                                        ))}
+                                        <Pagination.Next
+                                            onClick={() => handlePageChange(Math.min(currentPage + 1, 5))}
+                                        />
+                                    </Pagination>
+                                </div>
+                            )}
+                        </div>
+
                     </Col>
                 </Row>
             </Container>

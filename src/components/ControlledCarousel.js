@@ -2,7 +2,8 @@ import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import Card from 'react-bootstrap/Card';
 import background1 from '../assets/background1.jpeg';
-import background2 from '../assets/background4.jpg';
+import background2 from '../assets/background.png';
+import background3 from '../assets/background4.jpg';
 import team from '../assets/team.jpg';
 
 
@@ -31,7 +32,19 @@ function ControlledCarousel() {
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-                <img src={background2} style={{ width: '100%' }} alt="background of a badminton guide" className='background' />
+                <img src={background2} style={{ width: '100%' }} alt="background of a badminton court" className='background' />
+                <Carousel.Caption className="carousel-caption-custom">
+                    <Card className="bg-overlay text-white card-fixed-width">
+                        <Card.Body className="d-flex flex-column">
+                            <Card.Title className='fs-3 text-start'>Book a session</Card.Title>
+                            <Card.Text className='fs-5 pb-1 text-start'>Reserve a ssession to play with your friends or to practice with a coach.</Card.Text>
+                            <Link to="/booking" className="btn btn-primary" style={{ width: '130px' }}>Book Now</Link>
+                        </Card.Body>
+                    </Card>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <img src={background3} style={{ width: '100%' }} alt="background of a badminton guide" className='background' />
                 <Carousel.Caption className="carousel-caption-custom">
                     <Card className="bg-overlay text-white card-fixed-width">
                         <Card.Body className="d-flex flex-column">

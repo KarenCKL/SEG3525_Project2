@@ -210,10 +210,11 @@ color: #830032 !important;
    height: 400px;
  }
  .card-fixed-width {
-   width: 400px !important;
+   width: 380px !important;
+   background-color: rgba(0, 0, 0, 0.50) !important;
  }
  .carousel-caption-custom{
-   transform: translate(-8%, -65%) !important;
+   transform: translate(-8%, -75%) !important;
  }
 }
 
@@ -238,9 +239,9 @@ color: #830032 !important;
  .card-fixed-width {
    width: 350px !important;
   
-   background-color: rgba(0, 0, 0, 0.30) !important;
+   background-color: rgba(0, 0, 0, 0.50) !important;
  }
  .carousel-caption-custom{
-   transform: translate(-8%, -90%) !important;
+   transform: translate(-8%, -80%) !important;
  }
 }
