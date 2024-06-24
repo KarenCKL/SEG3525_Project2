@@ -11,18 +11,19 @@ const NavBar = () => {
                 <Navbar.Brand as={Link} to='/' className="capitalize" id='name'>Ottawa Badminton Club</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ms-auto py-0 pe-5">
+                    <Nav className="ms-auto py-0 pe-3">
                         <Nav.Link as={Link} to='/' id="HomeLink" className="capitalize">Home</Nav.Link>
                         <Nav.Link as={Link} to='/Guides' className="capitalize">Guides</Nav.Link>
                         <Nav.Link as={Link} to='/Forum' className="capitalize">Forum</Nav.Link>
+                        <Nav.Link as={Link} to='/Shop' className="capitalize">Shop</Nav.Link>
+                        <Nav.Link as={Link} to='/Booking' className="capitalize">Booking</Nav.Link>
                         <NavDropdown title="Suscription" id="basic-nav-dropdown">
                             <NavDropdown.Item as={Link} to="/Suscription#membership">Membership</NavDropdown.Item>
                             <NavDropdown.Item as={Link} to="/Subscription#Coaching">Coaching</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to="/Subscription#Booking">Booking</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                     <Button as={Link} to='/' variant="primary" className='text-white py-1 px-1 capitalize' id='bookIdbtn'>Join Now</Button>
-                    <Button as={Link} to='/' variant="secondary" className='text-white py-1 px-1 capitalize' id='loginIdbtn'>Login</Button>
+                    <Button as={Link} to='/' variant="secondary" className='text-white py-1 px-1 capitalize' id='loginIdbtn'>Log In</Button>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

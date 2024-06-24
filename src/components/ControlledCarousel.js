@@ -36,8 +36,8 @@ function ControlledCarousel() {
                 <Carousel.Caption className="carousel-caption-custom">
                     <Card className="bg-overlay text-white card-fixed-width">
                         <Card.Body className="d-flex flex-column">
-                            <Card.Title className='fs-3 text-start'>Book a session</Card.Title>
-                            <Card.Text className='fs-5 pb-1 text-start'>Reserve a ssession to play with your friends or to practice with a coach.</Card.Text>
+                            <Card.Title className='fs-3 text-start'>Already a Member</Card.Title>
+                            <Card.Text className='fs-5 pb-1 text-start'>Reserve a session to play with your friends or to practice with a coach.</Card.Text>
                             <Link to="/booking" className="btn btn-primary" style={{ width: '130px' }}>Book Now</Link>
                         </Card.Body>
                     </Card>

@@ -4,6 +4,7 @@ import './App.scss'
 import Navbar from './components/Navbar';
 import Home from './pages/home';
 import Guides from './pages/guides';
+import Booking from './pages/booking';
 import Footer from './components/Footer';
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/guides" element={<Guides />} />
+                        <Route path="/booking" element={<Booking />} />
                     </Routes>
                 </div>
                 <Footer />

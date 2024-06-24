@@ -1,12 +1,12 @@
 /*Larger Font*/
-.Font{
-    font-size: large !important;
+.Font {
+  font-size: large !important;
 }
 /*** Navbar ***/
 .custom-container {
   margin-top: 10px;
-  margin-left: 60px !important;
-  margin-right: 70px !important;
+  margin-left: 30px !important;
+  margin-right: 50px !important;
 }
 /* change the text in navbar to lowecase */
 .capitalize {
@@ -29,7 +29,7 @@
 .nav-link {
   color: #a60341 !important;
   position: relative;
-  margin-left: 25px;
+  margin-left: 10px;
   font-size: 18px !important;
   text-transform: uppercase;
   font-weight: 500 !important;
@@ -176,6 +176,17 @@ ul {
   background-color: #eaeff3c0;
   border-color: #830032;
 }
+/*booking*/
+.custom-select {
+    width: 300px;
+    border-color: #6c757d !important;
+    outline: none !important;
+}
+
+.custom-select:focus {
+    border-color: #6c757d !important;
+    box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.25) !important;
+}
 
 /* large screens */
 @media (min-width: 1024px) {
@@ -203,17 +214,21 @@ ul {
   #HomeLink {
     margin-top: 10px;
   }
+  .session {
+    padding-left: 90px !important;
+  }
 
   /* height of carousel */
   .background {
     height: 400px;
   }
   .card-fixed-width {
-    width: 380px !important;
+    width: 320px !important;
     background-color: rgba(0, 0, 0, 0.5) !important;
+    padding: 0px !important;
   }
   .carousel-caption-custom {
-    transform: translate(-8%, -75%) !important;
+    transform: translate(-8%, -70%) !important;
   }
 }
 
@@ -236,11 +251,14 @@ ul {
     height: 400px;
   }
   .card-fixed-width {
-    width: 350px !important;
-
+    width: 340px !important;
+    padding: 0px !important;
     background-color: rgba(0, 0, 0, 0.5) !important;
   }
   .carousel-caption-custom {
-    transform: translate(-8%, -80%) !important;
+    transform: translate(-8%, -65%) !important;
+  }
+  .session {
+    padding-left: 30px !important;
   }
 }

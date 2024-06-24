@@ -24,17 +24,17 @@ export default function Location() {
 
                     </div>
                 </Col>
-                <Col lg={4} className='mt-4 ps-lg-3 d-flex flex-column align-items-center'>
+                <Col lg={4} className='mt-5 ps-lg-3 d-flex flex-column align-items-center bg-secondary-subtle'>
                     <div className="pb-3 mt-lg-4"><h4>
                         Opening Hours</h4></div>
                     <div className="pb-2">
-                        <p className="text-center fs-5">Monday - Friday: 9:00 AM - 10:00 PM</p>
-                        <p className="text-center fs-5">Saturday: 9:00 AM - 10:00 PM</p>
-                        <p className="text-center fs-5">Sunday:9:00 AM - 8:00 PM</p>
-                        <p className='text-center fs-5'>Email: <a href="mailto:info@badmintonClub.ca" className="text-black" id='emailFooter'>info@badmintonClub.ca</a></p>
-                        <p className='text-center fs-5'>Tel: <a href="+123456789" className="text-black" id='phoneFooter'>+1 (234) 567-890</a></p>
+                        <p className="fs-5">Monday - Friday: 9:00 AM - 10:00 PM</p>
+                        <p className="fs-5">Saturday: 9:00 AM - 10:00 PM</p>
+                        <p className="fs-5">Sunday: 9:00 AM - 8:00 PM</p>
+                        <p className='fs-5'>Email: <a href="mailto:info@badmintonClub.ca" className="text-black" id='emailFooter'>info@badmintonClub.ca</a></p>
+                        <p className='fs-5'>Tel: <a href="+123456789" className="text-black" id='phoneFooter'>+1 (234) 567-890</a></p>
                     </div>
-                    <div className='ms-5 pb-2'>
+                    <div className='ms-4'>
                         <Button as={Link} to='/' variant="primary" className='text-white py-1 px-1 capitalize' id='bookIdbtn'>Join Now</Button>
                     </div>
                 </Col>
