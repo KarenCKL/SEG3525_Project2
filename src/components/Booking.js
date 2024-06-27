@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Form, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Form, Card, Button, Table } from 'react-bootstrap';
 import court from '../assets/court1.jpg';
 import { Link } from 'react-router-dom';
 
@@ -42,6 +42,99 @@ export default function Booking() {
                             </Card.Body>
                         </Card>
                     </Col>
+                </Row>
+                <Row>
+                    <div className="d-flex justify-content-center mt-5 mb-3 text-info fst-italic">
+                        <h3>Our Schedule</h3>
+                    </div>
+                    <div className='mb-4'>
+                        <Table responsive="sm" bordered hover>
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Monday</th>
+                                    <th>Tuesday</th>
+                                    <th>Wednesday</th>
+                                    <th>Thursday</th>
+                                    <th>Friday</th>
+                                    <th>Saturday</th>
+                                    <th>Sunday</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>08:00-10:00</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                </tr>
+                                <tr>
+                                    <td>10:00-12:00</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                </tr>
+                                <tr>
+                                    <td>12:00-14:00</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                </tr>
+                                <tr>
+                                    <td>14:00-16:00</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                </tr>
+                                <tr>
+                                    <td>16:00-18:00</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                </tr>
+                                <tr>
+                                    <td>18:00-20:00</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                </tr>
+                                <tr>
+                                    <td>20:00-22:00</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                    <td>Table cell</td>
+                                </tr>
+                            </tbody>
+                        </Table>
+                    </div>
                 </Row>
             </Container>
         </div>

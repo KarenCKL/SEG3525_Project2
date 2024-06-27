@@ -5,8 +5,8 @@ import background1 from '../assets/background1.jpeg';
 import background2 from '../assets/background.png';
 import background3 from '../assets/background4.jpg';
 import team from '../assets/team.jpg';
-
-
+import shop from '../assets/shopping.png';
+import shopMobile from '../assets/shoppingMobile.png';
 import '../App.css';
 import { Link } from 'react-router-dom';
 
@@ -63,6 +63,20 @@ function ControlledCarousel() {
                             <Card.Title className='fs-3 text-start' >Join the Community</Card.Title>
                             <Card.Text className='fs-5 pb-1 text-start'>Connect with fellow badminton enthusiasts, share your thoughts, and get advice in our forum.</Card.Text>
                             <Link to="/forum" className="btn btn-primary" style={{ width: '130px' }}>Visit Forum</Link>
+                        </Card.Body>
+                    </Card>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <div></div>
+                <img src={shop} style={{ width: '100%' }} alt="background of a badminton guide" className='background large-screen-image' />
+                <img src={shopMobile} style={{ width: '100%' }} alt="background of a badminton guide" className='background small-screen-image' />
+                <Carousel.Caption className="carousel-caption-custom">
+                    <Card className="bg-overlay text-white card-fixed-width">
+                        <Card.Body className="d-flex flex-column">
+                            <Card.Title className='fs-3 text-start' >Shop for Gear</Card.Title>
+                            <Card.Text className='fs-5 pb-1 text-start'>Browse our collection of badminton equipment and accessories.</Card.Text>
+                            <Link to="/forum" className="btn btn-primary" style={{ width: '130px' }}>Shop Now</Link>
                         </Card.Body>
                     </Card>
                 </Carousel.Caption>
