@@ -1,331 +1,350 @@
 import React from 'react'
 import { Container, Row, Col, Card, Form, Button, Pagination } from 'react-bootstrap'
-import { useState, useEffect } from 'react';
-import guide from '../assets/guide.jpeg';
+import { useState} from 'react';
+import E1 from '../assets/E1.webp';
+import E2 from '../assets/E2.jpg';
+import E3 from '../assets/E3.jpg';
+import E4 from '../assets/E4.webp';
+import E5 from '../assets/E5.webp';
 
 export default function Shop() {
-   // Initial state for checkboxes in each chapter
-   const initialCheckboxesChapter1 = [
-    { isChecked: false, message: 'Boundaries' },
-    { isChecked: false, message: 'Double play' },
-    { isChecked: false, message: 'Faults' },
-    { isChecked: false, message: 'Scoring' },
-    { isChecked: false, message: 'Serves' },
-];
-const initialCheckboxesChapter2 = [
-    { isChecked: false, message: 'Court sprints' },
-    { isChecked: false, message: 'Lunges' },
-    { isChecked: false, message: 'Quick stepping' },
-    { isChecked: false, message: 'Shuffling' },
-];
-const initialCheckboxesChapter3 = [
-    { isChecked: false, message: 'Learn to play at different speed' },
-];
-const initialCheckboxesChapter4 = [
-    { isChecked: false, message: 'Flat serve' },
-    { isChecked: false, message: 'High serve' },
-    { isChecked: false, message: 'Play your serves strategically' },
-    { isChecked: false, message: 'Slices serves' },
-    { isChecked: false, message: 'Use good technique' },
-];
-const initialCheckboxesChapter5 = [
-    { isChecked: false, message: 'Focus on the process' },
-    { isChecked: false, message: 'Stay positive' },
-    { isChecked: false, message: 'Take deep breaths' },
-    { isChecked: false, message: 'Visualize success' },
-];
-//Data for each chapter
-const contentMapping = {
-    'Boundaries': 'The shuttlecock is out of bounds if it lands outside of the boundary lines of the court, or if it touches the ceiling or any other object above the court. The shuttlecock is also out of bounds if it lands on the line marking the boundary of the court.',
-    'Double play': 'In doubles play (where there are two players on each side), the serving order must be rotated after each game. Players must serve from the right service court when the score is even, and from the left service court when the score is odd.',
-    'Faults': 'A fault is committed when a player violates one of the rules of the game. Examples of faults include serving incorrectly, hitting the shuttlecock out of bounds, or hitting the shuttlecock before it has crossed the net. If a player commits a fault, their opponent wins the rally.',
-    'Scoring': 'A rally is won when the shuttlecock lands in your opponent’s court, or when your opponent hits the shuttlecock out of bounds or into the net. Points can only be scored by the serving side, and the first side to reach 21 points (with a margin of at least two points) wins the game.',
-    'Serves': 'A serve must be hit diagonally across the court, and the shuttlecock must be hit below waist height on the serve. The server has two serves, and the serve must be returned by the receiver. If the receiver is unable to return the serve, the server wins the rally.',
-};
+    // Initial state for checkboxes
+    const initialCheckboxes1 = [
+        { isChecked: false, message: 'Racquets' },
+        { isChecked: false, message: 'Starter Sets' },
+        { isChecked: false, message: 'Bags' },
+        { isChecked: false, message: 'Clothes' },
+        { isChecked: false, message: 'Shoes' },
+        { isChecked: false, message: 'Other Accessories' },
+    ];
+    const initialCheckboxes2 = [
+        { isChecked: false, message: '$0-$50' },
+        { isChecked: false, message: '$50-$100' },
+        { isChecked: false, message: '$100-$200' },
+        { isChecked: false, message: 'Over $200' },
+    ];
+    const initialCheckboxes3 = [
+        { isChecked: false, message: 'Sales Items' },
+    ];
+    const initialCheckboxes4 = [
+        { isChecked: false, message: 'Yonex' },
+        { isChecked: false, message: 'Li-Ning' },
+        { isChecked: false, message: 'Victor' },
+        { isChecked: false, message: 'Under Armour' },
+        { isChecked: false, message: 'Wilson' },
+        { isChecked: false, message: 'Head' },
+    ];
+    const initialCheckboxes5 = [
+        { isChecked: false, message: 'Free Shipping' },
+    ];
+    const initialCheckboxes6 = [
+        { isChecked: false, message: 'New Items' },
+        { isChecked: false, message: 'Used Items' },
+    ];
+    //Data
+    const contentMapping = {
+        'Racquets': [
+            {
+                name: 'Yonex Racquet',
+                image: E1,
+                description: 'Racquet from the Yonex brand.',
+                price: '$200'
+            },
+            {
+                name: 'Double Racquet',
+                image: E2,
+                description: 'Racquet suitable for doubles play.',
+                price: '$250'
+            },
+            {
+                name: 'Li-Ning Racquet',
+                image: E3,
+                description: 'Racquet from the Li-Ning brand.',
+                price: '$120'
+            },
+            // Add more racquet items as needed
+        ],
+        'Starter Sets': [
+            {
+                name: 'Basic Starter Set',
+                image: E5,
+                description: 'Starter set with racquets and shuttlecocks.',
+                price: '$50'
+            },
+            {
+                name: 'Full Starter Set',
+                image: E4,
+                description: 'Full Starter set with accessories.',
+                price: '$100'
+            },
+            // Add more starter set items as needed
+        ]
+    };
 
-const [currentPage, setCurrentPage] = useState(1);
-const [checkboxesChapter1, setCheckboxesChapter1] = useState(initialCheckboxesChapter1);
-const [checkboxesChapter2, setCheckboxesChapter2] = useState(initialCheckboxesChapter2);
-const [checkboxesChapter3, setCheckboxesChapter3] = useState(initialCheckboxesChapter3);
-const [checkboxesChapter4, setCheckboxesChapter4] = useState(initialCheckboxesChapter4);
-const [checkboxesChapter5, setCheckboxesChapter5] = useState(initialCheckboxesChapter5);
-const [anyCheckboxChecked, setAnyCheckboxChecked] = useState(false);
 
-//Function to hide pagination when checkboxes are selected
-useEffect(() => {
-    const isAnyChecked = [
-        ...checkboxesChapter1,
-        ...checkboxesChapter2,
-        ...checkboxesChapter3,
-        ...checkboxesChapter4,
-        ...checkboxesChapter5
-    ].some(checkbox => checkbox.isChecked);
-    setAnyCheckboxChecked(isAnyChecked);
-}, [checkboxesChapter1, checkboxesChapter2, checkboxesChapter3, checkboxesChapter4, checkboxesChapter5]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [checkboxes1, setCheckboxes1] = useState(initialCheckboxes1);
+    const [checkboxes2, setCheckboxes2] = useState(initialCheckboxes2);
+    const [checkboxes3, setCheckboxes3] = useState(initialCheckboxes3);
+    const [checkboxes4, setCheckboxes4] = useState(initialCheckboxes4);
+    const [checkboxes5, setCheckboxes5] = useState(initialCheckboxes5);
+    const [checkboxes6, setCheckboxes6] = useState(initialCheckboxes6);
+    // const [anyCheckboxChecked, setAnyCheckboxChecked] = useState(false);
 
-// Function to handle checkbox change for each chapter
-const handleCheckboxChange = (chapter, index) => (event) => {
-    const setCheckboxes = {
-        1: setCheckboxesChapter1,
-        2: setCheckboxesChapter2,
-        3: setCheckboxesChapter3,
-        4: setCheckboxesChapter4,
-        5: setCheckboxesChapter5,
-    }[chapter];
+    //Function to hide pagination when checkboxes are selected
+    // useEffect(() => {
+    //     const isAnyChecked = [
+    //         ...checkboxes1,
+    //         ...checkboxes2,
+    //         ...checkboxes3,
+    //         ...checkboxes4,
+    //         ...checkboxes5
+    //     ].some(checkbox => checkbox.isChecked);
+    //     setAnyCheckboxChecked(isAnyChecked);
+    // }, [checkboxes1, checkboxes2, checkboxes3, checkboxes4, checkboxes5, checkboxes6]);
 
-    const checkboxes = {
-        1: checkboxesChapter1,
-        2: checkboxesChapter2,
-        3: checkboxesChapter3,
-        4: checkboxesChapter4,
-        5: checkboxesChapter5,
-    }[chapter];
+    // Function to handle checkbox
+    const handleCheckboxChange = (item, index) => (event) => {
+        const setCheckboxes = {
+            1: setCheckboxes1,
+            2: setCheckboxes2,
+            3: setCheckboxes3,
+            4: setCheckboxes4,
+            5: setCheckboxes5,
+            6: setCheckboxes6,
+        }[item];
 
-    const newCheckboxes = [...checkboxes];
-    newCheckboxes[index].isChecked = event.target.checked;
-    setCheckboxes(newCheckboxes);
-};
+        const checkboxes = {
+            1: checkboxes1,
+            2: checkboxes2,
+            3: checkboxes3,
+            4: checkboxes4,
+            5: checkboxes5,
+            6: checkboxes6,
+        }[item];
 
-const handleUncheckAll = () => {
-    setCheckboxesChapter1(initialCheckboxesChapter1);
-    setCheckboxesChapter2(initialCheckboxesChapter2);
-    setCheckboxesChapter3(initialCheckboxesChapter3);
-    setCheckboxesChapter4(initialCheckboxesChapter4);
-    setCheckboxesChapter5(initialCheckboxesChapter5);
-    setCurrentPage(1);
-};
+        const newCheckboxes = [...checkboxes];
+        newCheckboxes[index].isChecked = event.target.checked;
+        setCheckboxes(newCheckboxes);
+    };
 
-//Function to handle Pagination Click
-const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
-};
+    const handleUncheckAll = () => {
+        setCheckboxes1(initialCheckboxes1);
+        setCheckboxes2(initialCheckboxes2);
+        setCheckboxes3(initialCheckboxes3);
+        setCheckboxes4(initialCheckboxes4);
+        setCheckboxes5(initialCheckboxes5);
+        setCheckboxes6(initialCheckboxes6);
+        setCurrentPage(1);
+    };
 
-// Content for different pages
-const renderContentForPage = (pageNumber) => {
-    switch (pageNumber) {
-        case 1:
-            // Filter out checked checkboxes for Chapter 1
-            const filteredChapter1 = checkboxesChapter1.filter(checkbox => checkbox.isChecked);
+    //Function to handle Pagination Click
+    const handlePageChange = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+    // Function to render products based on selected checkboxes or randomly if none selected
+    const renderContentForPage = (pageNumber) => {
+        const filtered1 = checkboxes1.filter(checkbox => checkbox.isChecked);
+        const filtered2 = checkboxes2.filter(checkbox => checkbox.isChecked);
+        const filtered3 = checkboxes3.filter(checkbox => checkbox.isChecked);
+        const filtered4 = checkboxes4.filter(checkbox => checkbox.isChecked);
+        const filtered5 = checkboxes5.filter(checkbox => checkbox.isChecked);
+        const filtered6 = checkboxes6.filter(checkbox => checkbox.isChecked);
 
-            return (
-                <>
-                    {filteredChapter1.length > 0 ? (
-                        <>
-                            {filteredChapter1.map((checkbox, index) => (
-                                <Row key={index} id={checkbox.message.replace(/\s+/g, '-').toLowerCase()}>
-                                    <Col className='ms-md-4 me-md-3'>
-                                        <Card className='mt-md-4 mb-3 mb-md-4 chapter1'>
-                                            <Card.Body>
-                                                <Card.Title>{checkbox.message}</Card.Title>
-                                                <Card.Text>
-                                                    {checkbox.isChecked ? contentMapping[checkbox.message] : ''}
-                                                </Card.Text>
-                                                <Button variant="primary">Read More</Button>
-                                            </Card.Body>
-                                        </Card>
-                                    </Col>
-                                </Row>
-                            ))}
-                        </>
-                    ) : (
-                        <>
-                            {initialCheckboxesChapter1.map((checkbox, index) => (
-                                <Row key={index} id={checkbox.message.replace(/\s+/g, '-').toLowerCase()}>
-                                    <Col className='ms-md-4 me-md-3'>
-                                        <Card className='mt-md-4 mb-3 mb-md-4 chapter1'>
-                                            <Card.Body>
-                                                <Card.Title>{checkbox.message}</Card.Title>
-                                                <Card.Text>
-                                                    {contentMapping[checkbox.message]}
-                                                </Card.Text>
-                                                <Button variant="primary">Read More</Button>
-                                            </Card.Body>
-                                        </Card>
-                                    </Col>
-                                </Row>
-                            ))}
-                        </>
-                    )}
-                </>
-            );
-        case 2:
-            return (
-                <>
-                    <Row id="Court">
-                        <Col className='ms-md-4 me-md-3'>
-                            <Card className='mt-md-4 mb-3 mb-md-4 chapter1'>
-                                <Card.Body>
-                                    <Card.Title>Court Sprints</Card.Title>
-                                    <Card.Text>
-                                        Sprint from one end of the court to the other, focusing on quick, light steps. This drill will help you improve your overall speed and endurance.
-                                    </Card.Text>
-                                    <Button variant="primary">Read More</Button>
+        // Filter products based on selected checkboxes
+        let productsToShow = [];
+        if (filtered1.length > 0) {
+            filtered1.forEach(checkbox => {
+                if (contentMapping[checkbox.message]) {
+                    productsToShow = productsToShow.concat(contentMapping[checkbox.message]);
+                }
+            });
+        } else {
+            // If no checkboxes are selected, show random items
+            const allItems = Object.values(contentMapping).flat();
+            const shuffledItems = shuffleArray(allItems); // Implement shuffleArray function
+            productsToShow = shuffledItems.slice(0, 8); // Show first 8 random items
+        }
+
+        // Paginate products
+        const itemsPerPage = 4;
+        const startIndex = (pageNumber - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const paginatedProducts = productsToShow.slice(startIndex, endIndex);
+
+        return (
+            <Container>
+                <Row>
+                    {paginatedProducts.map((item, index) => (
+                        <Col key={index} md={6}>
+                            <Card className='mt-md-4 mb-3 mb-md-4'>
+                                <Card.Img variant="top" src={item.image}/>
+                                <Card.Body className='ps-4 pt-4'>
+                                    <Card.Title>{item.name}</Card.Title>
+                                    <Card.Text>{item.description}</Card.Text>
+                                    <Card.Text>{item.price}</Card.Text>
+                                    <div>
+                                        <Button variant="secondary" id={`detailsBtn-${index}`} className='details'>Details</Button>
+                                        <Button variant="primary" id={`buyBtn-${index}`} className='buy'>Buy</Button>
+                                    </div>
                                 </Card.Body>
                             </Card>
                         </Col>
-                    </Row>
+                    ))}
+                </Row>
+            </Container>
+        );
+    };
 
-                </>
-            );
-        case 3:
-            return (
-                <>
-                    <Row>
-                        <Col className='ms-md-4 me-md-3'>
-                            <Card className='mt-md-4 mb-3 mb-md-4 chapter1'>
-                                <Card.Body>
-                                    <Card.Title>Learn to Play at Different Speeds</Card.Title>
-                                    <Card.Text>
-                                        Practicing at different speeds can help you become more adaptable during matches. Try playing rallies at various speeds to enhance your reaction time and adaptability.
-                                    </Card.Text>
-                                    <Button variant="primary">Read More</Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    </Row>
-                </>
-            );
+    // Function to shuffle array (for random item selection)
+    const shuffleArray = (array) => {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    };
 
-        default:
-            return null;
-    }
-};
-return (
-    <div>
-        <Container>
-            <h3 className='text-info text-center mt-4 fs-3'>The Ultimate Badminton Guide</h3>
-            <Row className='mt-4'>
-                <Col md={4}>
-                    <img src={guide} style={{ width: "100%" }} alt="" />
-                </Col>
-                <Col md={8}>
-                    <p className='guide mt-lg-1 mt-xl-4 mt-3 ms-2'>Welcome to "The Ultimate Badminton Guide," designed to enhance your badminton skills and elevate your game. This comprehensive guide is organized into multiple chapters covering various aspects of the sport. Each chapter focuses on specific skills and strategies, allowing you to select and explore topics that interest you the most. Whether you're looking to refine your technique, master advanced tactics, or improve your mental game, this guide provides the tools and insights to help you achieve your badminton goals effectively.
-                    </p>
-                </Col>
-            </Row>
-            <Row className='mt-3'>
-                <Col md={4}>
-                    <Card className='facette mt-4 mb-5' >
-                        <Card.Body>
-                            <div className='d-flex justify-content-between'>
-                                <Card.Title className='text-info fs-4'>Content</Card.Title>
-                                <Button variant="primary" onClick={handleUncheckAll}>Reset</Button>
-                            </div>
-                            <Card.Text>
-                                <span className='chapter mt-1 ms-3 fs-5'>Chapter 1: </span>
-                                <ul className='mt-1 ms-3 ms-md-4'>
-                                    <li>Learn the lessons</li>
-                                    {checkboxesChapter1.map((checkbox, index) => (
-                                        <li key={index}>
-                                            <Form.Check
-                                                className='mt-2 ms-4'
-                                                type="checkbox"
-                                                id={`checkbox-ch1-${index}`}
-                                                label={checkbox.message}
-                                                checked={checkbox.isChecked}
-                                                onChange={handleCheckboxChange(1, index)}
-                                            />
-                                        </li>
-                                    ))}
-                                </ul>
-                                <span className='chapter mt-1 ms-3 fs-5'>Chapter 2: </span>
-                                <ul className='mt-1 ms-3 ms-md-4'>
-                                    <li>Practice your footwork</li>
-                                    {checkboxesChapter2.map((checkbox, index) => (
-                                        <li key={index}>
-                                            <Form.Check
-                                                className='mt-2 ms-4'
-                                                type="checkbox"
-                                                id={`checkbox-ch2-${index}`}
-                                                label={checkbox.message}
-                                                checked={checkbox.isChecked}
-                                                onChange={handleCheckboxChange(2, index)}
-                                            />
-                                        </li>
-                                    ))}
-                                </ul>
-                                <span className='chapter mt-1 ms-3 fs-5'>Chapter 3: </span>
-                                <ul className='mt-1 ms-3 ms-md-4'>
-                                    {checkboxesChapter3.map((checkbox, index) => (
-                                        <li key={index}>
-                                            <Form.Check
-                                                className='mt-2 ms-4'
-                                                type="checkbox"
-                                                id={`checkbox-ch3-${index}`}
-                                                label={checkbox.message}
-                                                checked={checkbox.isChecked}
-                                                onChange={handleCheckboxChange(3, index)}
-                                            />
-                                        </li>
-                                    ))}
-                                </ul>
-                                <span className='chapter mt-1 ms-3 fs-5'>Chapter 4: </span>
-                                <ul className='mt-1 ms-3 ms-md-4'>
-                                    <li>Work on your serve</li>
-                                    {checkboxesChapter4.map((checkbox, index) => (
-                                        <li key={index}>
-                                            <Form.Check
-                                                className='mt-2 ms-4'
-                                                type="checkbox"
-                                                id={`checkbox-ch4-${index}`}
-                                                label={checkbox.message}
-                                                checked={checkbox.isChecked}
-                                                onChange={handleCheckboxChange(4, index)}
-                                            />
-                                        </li>
-                                    ))}
-                                </ul>
-                                <span className='chapter mt-1 ms-3 fs-5'>Chapter 5: </span>
-                                <ul className='mt-1 ms-3 ms-md-4'>
-                                    <li>Learn to play under pressure</li>
-                                    {checkboxesChapter5.map((checkbox, index) => (
-                                        <li key={index}>
-                                            <Form.Check
-                                                className='mt-2 ms-4'
-                                                type="checkbox"
-                                                id={`checkbox-ch5-${index}`}
-                                                label={checkbox.message}
-                                                checked={checkbox.isChecked}
-                                                onChange={handleCheckboxChange(5, index)}
-                                            />
-                                        </li>
-                                    ))}
-                                </ul>
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                </Col>
-                <Col md={8}>
-                    <div>
-                        {renderContentForPage(currentPage)}
-                    </div>
-                    <div>
-                        {!anyCheckboxChecked && (
-                            <div>
-                                <Pagination className='d-flex justify-content-center mt-4'>
-                                    <Pagination.Prev
-                                        onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
-                                    />
-                                    {[1, 2, 3].map((page) => (
-                                        <Pagination.Item
-                                            key={page}
-                                            active={page === currentPage}
-                                            onClick={() => handlePageChange(page)}
-                                        >
-                                            {page}
-                                        </Pagination.Item>
-                                    ))}
-                                    <Pagination.Next
-                                        onClick={() => handlePageChange(Math.min(currentPage + 1, 5))}
-                                    />
-                                </Pagination>
-                            </div>
-                        )}
-                    </div>
-
-                </Col>
-            </Row>
-        </Container>
-    </div>
-)
+    return (
+        <div>
+            <Container>
+                <h3 className='text-info text-center mt-5 fs-3'>Shop</h3>
+                <Row>
+                    <Col>
+                        <p className='guide mt-lg-1 mt-xl-4 mt-3 ms-2 fs-5'>
+                            Welcome to the shop! Here you can find a variety of products to help you improve your badminton skills. Whether you're looking for training equipment, apparel, or accessories, we've got you covered. Check out our selection below and start shopping today!
+                        </p>
+                    </Col>
+                </Row>
+                <Row className='mt-3'>
+                    <Col md={4}>
+                        <Card className='facette mt-4 mb-5' >
+                            <Card.Body>
+                                <div className='d-flex justify-content-between'>
+                                    <Card.Title className='text-info fs-4'>Items</Card.Title>
+                                    <Button variant="primary" onClick={handleUncheckAll}>Reset</Button>
+                                </div>
+                                <Card.Text>
+                                    <span className='items mt-1 ms-3 fs-5'>Category</span>
+                                    <ul className='mt-1 ms-3 ms-md-4'>
+                                        {checkboxes1.map((checkbox, index) => (
+                                            <li key={index}>
+                                                <Form.Check
+                                                    className='mt-2 ms-4'
+                                                    type="checkbox"
+                                                    id={`checkbox-ch1-${index}`}
+                                                    label={checkbox.message}
+                                                    checked={checkbox.isChecked}
+                                                    onChange={handleCheckboxChange(1, index)}
+                                                />
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <span className='items mt-1 ms-3 fs-5'>Price</span>
+                                    <ul className='mt-1 ms-3 ms-md-4'>
+                                        {checkboxes2.map((checkbox, index) => (
+                                            <li key={index}>
+                                                <Form.Check
+                                                    className='mt-2 ms-4'
+                                                    type="checkbox"
+                                                    id={`checkbox-ch2-${index}`}
+                                                    label={checkbox.message}
+                                                    checked={checkbox.isChecked}
+                                                    onChange={handleCheckboxChange(2, index)}
+                                                />
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <span className='items mt-1 ms-3 fs-5'>On Sale</span>
+                                    <ul className='mt-1 ms-3 ms-md-4'>
+                                        {checkboxes3.map((checkbox, index) => (
+                                            <li key={index}>
+                                                <Form.Check
+                                                    className='mt-2 ms-4'
+                                                    type="checkbox"
+                                                    id={`checkbox-ch3-${index}`}
+                                                    label={checkbox.message}
+                                                    checked={checkbox.isChecked}
+                                                    onChange={handleCheckboxChange(3, index)}
+                                                />
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <span className='items mt-1 ms-3 fs-5'>Brands</span>
+                                    <ul className='mt-1 ms-3 ms-md-4'>
+                                        {checkboxes4.map((checkbox, index) => (
+                                            <li key={index}>
+                                                <Form.Check
+                                                    className='mt-2 ms-4'
+                                                    type="checkbox"
+                                                    id={`checkbox-ch4-${index}`}
+                                                    label={checkbox.message}
+                                                    checked={checkbox.isChecked}
+                                                    onChange={handleCheckboxChange(4, index)}
+                                                />
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <span className='items mt-1 ms-3 fs-5'>Shipping</span>
+                                    <ul className='mt-1 ms-3 ms-md-4'>
+                                        {checkboxes5.map((checkbox, index) => (
+                                            <li key={index}>
+                                                <Form.Check
+                                                    className='mt-2 ms-4'
+                                                    type="checkbox"
+                                                    id={`checkbox-ch5-${index}`}
+                                                    label={checkbox.message}
+                                                    checked={checkbox.isChecked}
+                                                    onChange={handleCheckboxChange(5, index)}
+                                                />
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <span className='items mt-1 ms-3 fs-5'>Condition</span>
+                                    <ul className='mt-1 ms-3 ms-md-4'>
+                                        {checkboxes6.map((checkbox, index) => (
+                                            <li key={index}>
+                                                <Form.Check
+                                                    className='mt-2 ms-4'
+                                                    type="checkbox"
+                                                    id={`checkbox-ch6-${index}`}
+                                                    label={checkbox.message}
+                                                    checked={checkbox.isChecked}
+                                                    onChange={handleCheckboxChange(6, index)}
+                                                />
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                    <Col md={8}>
+                        <div>
+                            {renderContentForPage(currentPage)}
+                        </div>
+                    </Col>
+                    <Col md={12}>
+                        <Pagination className='d-flex justify-content-center mt-4' style={{marginLeft:"500px"}}>
+                            <Pagination.Prev
+                                onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
+                            />
+                            {[1, 2, 3, 4, 5].map((page) => (
+                                <Pagination.Item
+                                    key={page}
+                                    active={page === currentPage}
+                                    onClick={() => handlePageChange(page)}
+                                >
+                                    {page}
+                                </Pagination.Item>
+                            ))}
+                            <Pagination.Next
+                                onClick={() => handlePageChange(Math.min(currentPage + 1, 5))}
+                            />
+                        </Pagination>
+                    </Col>
+                </Row>
+            </Container>
+        </div>
+    )
 }

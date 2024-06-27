@@ -76,7 +76,7 @@ function ControlledCarousel() {
                         <Card.Body className="d-flex flex-column">
                             <Card.Title className='fs-3 text-start' >Shop for Gear</Card.Title>
                             <Card.Text className='fs-5 pb-1 text-start'>Browse our collection of badminton equipment and accessories.</Card.Text>
-                            <Link to="/forum" className="btn btn-primary" style={{ width: '130px' }}>Shop Now</Link>
+                            <Link to="/shop" className="btn btn-primary" style={{ width: '130px' }}>Shop Now</Link>
                         </Card.Body>
                     </Card>
                 </Carousel.Caption>
