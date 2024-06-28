@@ -162,9 +162,9 @@ ul {
 .item {
   background-color: #e9ecef !important;
 }
-.details{
+.details {
   width: 150px;
-  margin-right: 20px !important;
+  margin-right: 40px !important;
 }
 .buy {
   width: 150px;
@@ -252,6 +252,22 @@ ul {
   background-size: 1rem;
   transition: transform 0.2s ease-in-out;
 }
+/*Login*/
+.form-control:focus {
+  border-color: #6c757d !important;
+  box-shadow: 0 0 0 0.25rem rgba(108, 117, 125, 0.25) !important;
+  outline: none !important;
+}
+#loginIdBtn {
+    width: 150px !important;
+}
+.form-control,
+.form-control-plaintext,
+.form-select {
+    height: 40px !important; 
+    min-height: 40px !important; 
+    line-height: 1.5; 
+}
 
 /* large screens */
 @media (min-width: 1024px) {
@@ -268,6 +284,27 @@ ul {
   .small-screen-image {
     display: none;
   }
+  .loginCard {
+    width: 40% !important;
+    margin-top: 5% !important;
+    margin-bottom: 5% !important;
+  }
+    .signUpCard{
+        margin-top: 3% !important;
+        margin-bottom: 4% !important;
+    }
+}
+/* extra large screens */
+@media (min-width: 1560px) {
+    .loginCard {
+      width: 40% !important;
+      margin-top: 8% !important;
+      margin-bottom: 10% !important;
+    }
+    .signUpCard{
+        margin-top: 6% !important;
+        margin-bottom: 8% !important;
+    }
 }
 
 /* medium screens */
@@ -344,11 +381,18 @@ ul {
   .small-screen-image {
     display: block;
   }
-  .details{
+  .details {
     width: 100px;
     margin-right: 20px !important;
   }
- .buy {
+  .buy {
     width: 100px;
+  }
+  .LoginCard{
+    width: 100% !important;
+  }
+  #loginIdBtn {
+    width: 150px !important;
+    margin-top: 20px !important;
   }
 }

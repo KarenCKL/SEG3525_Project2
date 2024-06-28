@@ -1,4 +1,4 @@
-import { Navbar, Container, Nav, NavDropdown, Button } from 'react-bootstrap';
+import { Navbar, Container, Nav, NavDropdown, Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import '../App.css';
@@ -22,8 +22,9 @@ const NavBar = () => {
                             <NavDropdown.Item as={Link} to="/Subscription#Coaching">Coaching</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
-                    <Button as={Link} to='/' variant="primary" className='text-white py-1 px-1 capitalize' id='bookIdbtn'>Join Now</Button>
-                    <Button as={Link} to='/' variant="secondary" className='text-white py-1 px-1 capitalize' id='loginIdbtn'>Log In</Button>
+                    <Button as={Link} to='/signup' variant="primary" className='text-white py-1 px-1 capitalize' id='bookIdbtn'>Join Now</Button>
+                    <Button as={Link} to='/login' variant="secondary" className='text-white py-1 px-1 capitalize' id='loginIdbtn'>Login</Button>
+                
                 </Navbar.Collapse>
             </Container>
         </Navbar>

@@ -26,7 +26,7 @@ function ControlledCarousel() {
                         <Card.Body className="d-flex flex-column">
                             <Card.Title className='fs-3 text-start'>Join our Badminton Club</Card.Title>
                             <Card.Text className='fs-5 pb-2 text-start'>Become a member and enjoy exclusive access to our facilities.</Card.Text>
-                            <Link to="/subscribe" className="btn btn-primary" style={{ width: '130px' }}>Join Now</Link>
+                            <Link to="/signup" className="btn btn-primary" style={{ width: '130px' }}>Join Now</Link>
                         </Card.Body>
                     </Card>
                 </Carousel.Caption>
