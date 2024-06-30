@@ -325,7 +325,7 @@ export default function Shop() {
                         </div>
                     </Col>
                     <Col md={12}>
-                        <Pagination className='d-flex justify-content-center mt-4' style={{marginLeft:"500px"}}>
+                        <Pagination className='d-flex justify-content-center mt-4'>
                             <Pagination.Prev
                                 onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
                             />

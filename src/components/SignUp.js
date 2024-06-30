@@ -1,9 +1,10 @@
 import React from 'react'
 import { Container, Row, Col, Form, Card, Button } from 'react-bootstrap';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 export default function SignUp() {
     const [validated, setValidated] = useState(false);
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         const form = event.currentTarget;
@@ -11,8 +12,13 @@ export default function SignUp() {
             event.preventDefault();
             event.stopPropagation();
         }
+        else {
+            // Navigate to the next page only if the form is valid
+            navigate('/signupnext');
+        }
 
         setValidated(true);
+        event.preventDefault();
     };
 
     return (
@@ -39,6 +45,7 @@ export default function SignUp() {
                                 type="text"
                                 placeholder="Enter First name"
                             />
+                            <Form.Control.Feedback type="invalid">Please provide a first name.</Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group as={Col} md="6" controlId="validationCustom02">
                             <Form.Label>Last name</Form.Label>
@@ -47,6 +54,7 @@ export default function SignUp() {
                                 type="text"
                                 placeholder="Enter Last name"
                             />
+                              <Form.Control.Feedback type="invalid">Please provide a last name.</Form.Control.Feedback>
                         </Form.Group>
                     </Row>
                     <Row className="mb-3">
@@ -95,7 +103,7 @@ export default function SignUp() {
                     </Row>
                     <Row className="mb-1 mt-5">
                         <Col md="6">
-                            <Button as={Link} to='/signupnext' type='submit' className='bg-secondary border-0' id="loginIdBtn">Next</Button>
+                            <Button type='submit' className='bg-secondary border-0' id="loginIdBtn">Next</Button>
                         </Col>
                     </Row>
                 </Form>

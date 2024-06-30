@@ -344,6 +344,18 @@ ul {
   .small-screen-image {
     display: none;
   }
+  .facette {
+    height: 1110px !important;
+  }
+  .details {
+    width: 150px;
+    margin-right: 20px !important;
+  }
+  .buy {
+    margin-top:10px !important;
+    width: 150px;
+  }
+
 }
 
 /*small screens */
