@@ -9,6 +9,9 @@ import Shop from './pages/shop';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import SignUpNext from './components/SignUpNext';
+import Membership from './components/Membership';
+import Coaching from './components/Coaching';
+import Forum from './pages/forum';
 import Footer from './components/Footer';
 function App() {
     return (
@@ -24,6 +27,9 @@ function App() {
                         <Route path="/login" element={<Login />} />
                         <Route path="/signup" element={<SignUp />} />
                         <Route path="/signupnext" element={<SignUpNext />} />
+                        <Route path="/membership" element={<Membership />} />
+                        <Route path="/coaching" element={<Coaching />} />
+                        <Route path="/forum" element={<Forum />} />
                     </Routes>
                 </div>
                 <Footer />

@@ -53,9 +53,10 @@ export default function SignUpNext() {
                                 controlId="floatingSelectGrid"
                             >
                                 <Form.Select aria-label="Floating label select example" className='py-0 ps-4 mt-2'>
-                                    <option value="2">Alberta</option>
-                                    <option value="1">Ontario</option>
-                                    <option value="3">Three</option>
+                                    <option value="1">Alberta</option>
+                                    <option value="2">British Columbia</option>
+                                    <option value="3">Ontario</option>
+                                    <option value="4">Québec</option>
                                 </Form.Select>
                             </FloatingLabel>
                         </Col>
@@ -92,7 +93,7 @@ export default function SignUpNext() {
                             <Form.Control.Feedback type="invalid">Invalid Password</Form.Control.Feedback>
                         </Form.Group>
                     </Row>
-                    <Row className="mb-1 mt-5">
+                    <Row className="mb-1 mt-5 justify-content-end">
                         <Col md="6">
                             <Button as={Link} to='/signup' className='bg-secondary border-0' id="loginIdBtn">Previous</Button>
                         </Col>

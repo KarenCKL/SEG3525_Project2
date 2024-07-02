@@ -268,6 +268,13 @@ ul {
     min-height: 40px !important; 
     line-height: 1.5; 
 }
+.custom-alert {
+    background-color: #989da1 !important; 
+    color: #000 !important; 
+    border-color: #989da1 !important; 
+}
+
+
 
 /* large screens */
 @media (min-width: 1024px) {
