@@ -4,7 +4,35 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 export default function SignUpNext() {
     const [validated, setValidated] = useState(false);
+    const [selectedType, setSelectedType] = useState("1");
+    const [categoryOptions, setCategoryOptions] = useState([
+        { value: "1", label: "Single Session" },
+        { value: "2", label: "Monthly" },
+        { value: "3", label: "Annually" },
+        { value: "4", label: "MultiPass" },
+    ]);
 
+    const handleTypeChange = (event) => {
+        const selectedValue = event.target.value;
+        setSelectedType(selectedValue);
+
+        // Update category options based on selected type
+        if (selectedValue === "1") { // Membership
+            setCategoryOptions([
+                { value: "1", label: "Single Session" },
+                { value: "2", label: "Monthly" },
+                { value: "3", label: "Annually" },
+                { value: "4", label: "MultiPass" },
+            ]);
+        } else if (selectedValue === "2") { // Coaching
+            setCategoryOptions([
+                { value: "1", label: "Beginner" },
+                { value: "2", label: "Intermediate" },
+                { value: "3", label: "Advanced" },
+                { value: "4", label: "Package" },
+            ]);
+        }
+    };
     const handleSubmit = (event) => {
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
@@ -48,7 +76,7 @@ export default function SignUpNext() {
                     </Row>
                     <Row className="mb-3">
                         <Col md={6}>
-                        <Form.Label>Select a Province</Form.Label>
+                            <Form.Label>Select a Province</Form.Label>
                             <FloatingLabel
                                 controlId="floatingSelectGrid"
                             >
@@ -93,7 +121,70 @@ export default function SignUpNext() {
                             <Form.Control.Feedback type="invalid">Invalid Password</Form.Control.Feedback>
                         </Form.Group>
                     </Row>
-                    <Row className="mb-1 mt-5 justify-content-end">
+                </Form>
+                <h5 className='mb-4 text-info mt-4'>Subcription</h5>
+                <Form noValidate validated={validated} onSubmit={handleSubmit}>
+                    <Row className="mb-3">
+                        <Col md={6}>
+                            <Form.Label>Select Membership or Coaching</Form.Label>
+                            <FloatingLabel controlId="floatingSelectGrid">
+                                <Form.Select
+                                    aria-label="Floating label select example"
+                                    className='py-0 ps-4 mt-2'
+                                    value={selectedType}
+                                    onChange={handleTypeChange}
+                                >
+                                    <option value="1">Membership</option>
+                                    <option value="2">Coaching</option>
+                                </Form.Select>
+                            </FloatingLabel>
+                        </Col>
+                        <Col md={6}>
+                            <Form.Label>Select a Category</Form.Label>
+                            <FloatingLabel controlId="floatingSelectGrid">
+                                <Form.Select aria-label="Floating label select example" className='py-0 ps-4 mt-2'>
+                                    {categoryOptions.map((option) => (
+                                        <option key={option.value} value={option.value}>{option.label}</option>
+                                    ))}
+                                </Form.Select>
+                            </FloatingLabel>
+                        </Col>
+                    </Row>
+                </Form>
+                <h5 className='mb-4 text-info mt-4'>Payment Information</h5>
+                <Form noValidate validated={validated} onSubmit={handleSubmit}>
+                <Row className="mb-3">
+                        <Form.Group as={Col} md="6" controlId="validationCustom01">
+                            <Form.Label>Enter your Card Number</Form.Label>
+                            <Form.Control
+                                required
+                                type="text"
+                                placeholder="Enter your Card Number"
+                            />
+                            <Form.Control.Feedback type="invalid">Invalid Card Number</Form.Control.Feedback>
+                        </Form.Group>
+                        <Form.Group as={Col} md="6" controlId="validationCustom02">
+                            <Form.Label>CVV</Form.Label>
+                            <Form.Control
+                                required
+                                type="text"
+                                placeholder=""
+                            />
+                             <Form.Control.Feedback type="invalid">Invalid CVV</Form.Control.Feedback>
+                        </Form.Group>
+                    </Row>
+                    <Row className="mb-3">
+                        <Form.Group as={Col} md="6" controlId="validationCustom01">
+                            <Form.Label>Expiry</Form.Label>
+                            <Form.Control
+                                required
+                                type="text"
+                                placeholder="MM/YY"
+                            />
+                            <Form.Control.Feedback type="invalid">Invalid Expiry Date</Form.Control.Feedback>
+                        </Form.Group>
+                    </Row>
+                    <Row className="mt-4 justify-content-end">
                         <Col md="6">
                             <Button as={Link} to='/signup' className='bg-secondary border-0' id="loginIdBtn">Previous</Button>
                         </Col>
