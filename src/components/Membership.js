@@ -1,13 +1,17 @@
 import React from 'react'
 import { Container, Row, Col, Card, Button, Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import image from '../assets/membership.jpg';
 export default function Membership() {
-  return (
-    <div>
-        <section id="membership">
+    return (
+        <div>
+            <section id="membership">
                 <Container>
                     <h3 className='text-info text-center mt-4 fs-3'>Memberships</h3>
-                    <Row className='mt-3 mb-4'>
+                    <p className='mt-xl-4 mt-5 pt-1 mb-1 guide fst-italic text-center'>
+                        Join the Ottawa Badminton Club and enjoy unlimited access to our facilities and services. Choose from a variety of membership options to suit your needs.
+                    </p>
+                    <Row className='mt-2 mb-4'>
                         <Col md={3}>
                             <Card className='bg-secondary-subtle mt-4'>
                                 <Card.Body>
@@ -58,11 +62,43 @@ export default function Membership() {
                             Note: The duration of 1 session is 2 hours.
                         </Alert>
                     </div>
-                    <div className='d-flex justify-content-center mt-4'>
-                        <Button as={Link} to='/' variant="primary" className='text-white py-1 px-1 capitalize' id='bookIdbtn'>Join Now</Button>
-                    </div>
+                    <Row className='mt-5 pb-3'>
+                        <Col md={4}>
+                            <img src={image} style={{ width: '100%' }} alt="" />
+                        </Col>
+                        <Col md={4} className='mt-4 pt-2'>
+                            <Card>
+                                <Card.Body>
+                                    <Card.Title><h3 className='text-center'>Already a Member?</h3></Card.Title>
+                                    <Card.Text className='mt-3'>
+                                        Login to your account to access your membership details and book a session.
+                                    </Card.Text>
+                                </Card.Body>
+                                <Card.Body>
+                                    <div className='d-flex justify-content-center'>
+                                        <Button as={Link} to='/login' variant="secondary" className='text-white py-1 px-1 capitalize' id='bookIdbtn'>Login</Button>
+                                    </div>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col md={4} className='mt-4 pt-2'>
+                            <Card>
+                                <Card.Body>
+                                    <Card.Title><h3 className='text-center'>Become a Member</h3></Card.Title>
+                                    <Card.Text className='mt-3'>
+                                        Join the Ottawa Badminton Club and enjoy unlimited access to our facilities and services.
+                                    </Card.Text>
+                                </Card.Body>
+                                <Card.Body>
+                                    <div className='d-flex justify-content-center'>
+                                        <Button as={Link} to='/signup' variant="primary" className='text-white py-1 px-1 capitalize' id='bookIdbtn'>Join Now</Button>
+                                    </div>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    </Row>
                 </Container>
             </section>
-    </div>
-  )
+        </div>
+    )
 }

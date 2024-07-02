@@ -211,7 +211,7 @@ export default function Shop() {
                 <h3 className='text-info text-center mt-5 fs-3'>Shop</h3>
                 <Row>
                     <Col>
-                        <p className='guide mt-lg-1 mt-xl-4 mt-3 ms-2 fs-5'>
+                        <p className='guide mt-lg-1 mt-xl-4 mt-3 ms-2 fs-5 fst-italic'>
                             Welcome to the shop! Here you can find a variety of products to help you improve your badminton skills. Whether you're looking for training equipment, apparel, or accessories, we've got you covered. Check out our selection below and start shopping today!
                         </p>
                     </Col>

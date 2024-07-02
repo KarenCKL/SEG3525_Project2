@@ -14,6 +14,7 @@ const NavBar = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto py-0 pe-3">
+                        <Nav.Link as={Link} to='/' id="HomeLink" className="capitalize">Home</Nav.Link>
                         <Nav.Link as={Link} to='/Guides' className="capitalize">Guides</Nav.Link>
                         <Nav.Link as={Link} to='/Forum' className="capitalize">Forum</Nav.Link>
                         <Nav.Link as={Link} to='/Shop' className="capitalize">Shop</Nav.Link>

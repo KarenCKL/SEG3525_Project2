@@ -259,22 +259,20 @@ ul {
   outline: none !important;
 }
 #loginIdBtn {
-    width: 150px !important;
+  width: 150px !important;
 }
 .form-control,
 .form-control-plaintext,
 .form-select {
-    height: 40px !important; 
-    min-height: 40px !important; 
-    line-height: 1.5; 
+  height: 40px !important;
+  min-height: 40px !important;
+  line-height: 1.5;
 }
 .custom-alert {
-    background-color: #989da1 !important; 
-    color: #000 !important; 
-    border-color: #989da1 !important; 
+  background-color: #989da1 !important;
+  color: #000 !important;
+  border-color: #989da1 !important;
 }
-
-
 
 /* large screens */
 @media (min-width: 1024px) {
@@ -296,22 +294,26 @@ ul {
     margin-top: 5% !important;
     margin-bottom: 5% !important;
   }
-    .signUpCard{
-        margin-top: 3% !important;
-        margin-bottom: 4% !important;
-    }
+  .signUpCard {
+    margin-top: 3% !important;
+    margin-bottom: 4% !important;
+  }
+  .submit{
+    display: flex !important;
+    justify-content: end !important;
+}
 }
 /* extra large screens */
 @media (min-width: 1560px) {
-    .loginCard {
-      width: 40% !important;
-      margin-top: 8% !important;
-      margin-bottom: 10% !important;
-    }
-    .signUpCard{
-        margin-top: 6% !important;
-        margin-bottom: 8% !important;
-    }
+  .loginCard {
+    width: 40% !important;
+    margin-top: 8% !important;
+    margin-bottom: 10% !important;
+  }
+  .signUpCard {
+    margin-top: 6% !important;
+    margin-bottom: 8% !important;
+  }
 }
 
 /* medium screens */
@@ -359,10 +361,9 @@ ul {
     margin-right: 20px !important;
   }
   .buy {
-    margin-top:10px !important;
+    margin-top: 10px !important;
     width: 150px;
   }
-
 }
 
 /*small screens */
@@ -407,7 +408,7 @@ ul {
   .buy {
     width: 100px;
   }
-  .LoginCard{
+  .LoginCard {
     width: 100% !important;
   }
   #loginIdBtn {

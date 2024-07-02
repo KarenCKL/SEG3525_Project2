@@ -1,9 +1,10 @@
 import React from 'react'
-import { Container, Row, Col, Form, Card, Button, FloatingLabel } from 'react-bootstrap';
+import { Container, Row, Col, Form, Card, Button, FloatingLabel, Modal } from 'react-bootstrap';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 export default function SignUpNext() {
     const [validated, setValidated] = useState(false);
+    const [showModal, setShowModal] = useState(false);
     const [selectedType, setSelectedType] = useState("1");
     const [categoryOptions, setCategoryOptions] = useState([
         { value: "1", label: "Single Session" },
@@ -39,9 +40,13 @@ export default function SignUpNext() {
             event.preventDefault();
             event.stopPropagation();
         }
+        else {
+            setShowModal(true); // Show the modal only if the form is valid
+        }
 
         setValidated(true);
     };
+    const handleClose = () => setShowModal(false);
     return (
         <Container>
             <Card className='p-5 mx-auto signUpCard'>
@@ -153,7 +158,7 @@ export default function SignUpNext() {
                 </Form>
                 <h5 className='mb-4 text-info mt-4'>Payment Information</h5>
                 <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                <Row className="mb-3">
+                    <Row className="mb-3">
                         <Form.Group as={Col} md="6" controlId="validationCustom01">
                             <Form.Label>Enter your Card Number</Form.Label>
                             <Form.Control
@@ -170,7 +175,7 @@ export default function SignUpNext() {
                                 type="text"
                                 placeholder=""
                             />
-                             <Form.Control.Feedback type="invalid">Invalid CVV</Form.Control.Feedback>
+                            <Form.Control.Feedback type="invalid">Invalid CVV</Form.Control.Feedback>
                         </Form.Group>
                     </Row>
                     <Row className="mb-3">
@@ -184,16 +189,27 @@ export default function SignUpNext() {
                             <Form.Control.Feedback type="invalid">Invalid Expiry Date</Form.Control.Feedback>
                         </Form.Group>
                     </Row>
-                    <Row className="mt-4 justify-content-end">
+                    <Row className="mt-4">
                         <Col md="6">
                             <Button as={Link} to='/signup' className='bg-secondary border-0' id="loginIdBtn">Previous</Button>
                         </Col>
-                        <Col md="6" className='d-flex justify-content-end'>
-                            <Button type="submit" className='bg-primary border-0' id="loginIdBtn">Submit</Button>
+                        <Col md="6">
+                            <div className='submit'>
+                                <Button type="submit" className='bg-primary border-0' id="loginIdBtn">Submit</Button>
+                            </div>
                         </Col>
                     </Row>
                 </Form>
             </Card>
+            <Modal show={showModal} onHide={handleClose} centered>
+                <Modal.Header closeButton>
+                    <Modal.Title className='text-primary'>Confirmation</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <h5>Thank you for your purchase!</h5>
+                    <p className='mt-3'>Check out the <Link to='/booking' className='text-black'>Booking Page</Link> to schedule your next match.</p>
+                </Modal.Body>
+            </Modal>
         </Container>
     )
 }
