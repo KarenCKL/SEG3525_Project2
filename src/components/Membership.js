@@ -8,7 +8,7 @@ export default function Membership() {
             <section id="membership">
                 <Container>
                     <h3 className='text-info text-center mt-4 fs-3'>Memberships</h3>
-                    <p className='mt-xl-4 mt-5 pt-1 mb-1 guide fst-italic text-center'>
+                    <p className='mt-xl-4 mt-3 mb-1 guide fst-italic text-center'>
                         Join the Ottawa Badminton Club and enjoy unlimited access to our facilities and services. Choose from a variety of membership options to suit your needs.
                     </p>
                     <Row className='mt-2 mb-4'>

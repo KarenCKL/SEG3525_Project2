@@ -9,7 +9,7 @@ export default function Coaching() {
         <section id="coaching">
             <Container>
                 <h3 className='text-info text-center mt-4 fs-3'>Coachings</h3>
-                <p className='mt-xl-4 mt-5 pt-1 mb-1 guide fst-italic text-center'> 
+                <p className='mt-xl-4 mt-3 mb-1 guide fst-italic text-center'> 
                     Our professional coaches offer a range of coaching sessions to suit all levels of players. Choose from a variety of coaching options to improve your game.
                 </p>
                 <Row className='mt-2 mb-4'>
