@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Form, Card, Button, Table } from 'react-bootstrap';
+import { Container, Row, Col, Form, Card, Button, Table, Alert } from 'react-bootstrap';
 import court from '../assets/court1.jpg';
 import { Link } from 'react-router-dom';
 
@@ -48,7 +48,7 @@ export default function Booking() {
                         <h3>Our Schedule</h3>
                     </div>
                     <div className='mb-4'>
-                        <Table responsive="sm" bordered hover>
+                        <Table responsive="sm" bordered className='table'>
                             <thead>
                                 <tr>
                                     <th>Time</th>
@@ -63,79 +63,60 @@ export default function Booking() {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>08:00-10:00</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
+                                    <td><b>08:00-10:00</b></td>
+                                    <td rowSpan="2" className='text-center open pt-5'>Open Play</td>
+                                    <td rowSpan="1" className='text-center beginner'>Beginner Coaching</td>
+                                    <td rowSpan="1" className='text-center intermediate'>Intermediate Coaching</td>
+                                    <td rowSpan="1" className='text-center advanced'>Advanced Coaching</td>
+                                    <td rowSpan="1" className='text-center open'>Open Play</td>
+                                    <td rowSpan="1" className='text-center advanced'>Advanced Coaching</td>
+                                    <td rowSpan="1" className='text-center beginner'>Beginner Coaching</td>
                                 </tr>
                                 <tr>
-                                    <td>10:00-12:00</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
+                                    <td><b>10:00-12:00</b></td>
+                                    <td colSpan="4" className='text-center open pt-3'>Open Play</td>
+                                    <td rowSpan="3" className='text-center intermediate' style={{paddingTop:'70px'}}>Intermediate Coaching</td>
+                                    <td rowSpan="3" className='text-center advanced' style={{paddingTop:'70px'}}>Advanced Coaching</td>
                                 </tr>
                                 <tr>
-                                    <td>12:00-14:00</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
+                                    <td><b>12:00-14:00</b></td>
+                                    <td rowSpan="1" className='text-center beginner pt-4'>Beginner Coaching</td>
+                                    <td rowSpan="2" className='text-center advanced pt-5'>Advanced Coaching</td>
+                                    <td rowSpan="2" className='text-center intermediate pt-5'>Intermediate Coaching</td>
+                                    <td colSpan="2" className='text-center open pt-4'>Open Play</td>
                                 </tr>
                                 <tr>
-                                    <td>14:00-16:00</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
+                                    <td><b>14:00-16:00</b></td>
+                                    <td rowSpan="2" className='text-center advanced pt-5'>Advanced Coaching</td>
+                                    <td rowSpan="3" className='text-center beginner' style={{paddingTop:'70px'}}>Beginner Coaching</td>
+                                    <td rowSpan="3" className='text-center advanced' style={{paddingTop:'70px'}}>Advanced Coaching</td>
                                 </tr>
                                 <tr>
-                                    <td>16:00-18:00</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
+                                    <td><b>16:00-18:00</b></td>
+                                    <td rowSpan="2" className='text-center beginner pt-5'>Beginner Coaching</td>
+                                    <td rowSpan="2" className='text-center open pt-5'>Open Play</td>
+                                    <td colSpan="2" className='text-center open pt-4'>Open Play</td>
+        
                                 </tr>
                                 <tr>
-                                    <td>18:00-20:00</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
+                                    <td><b>18:00-20:00</b></td>
+                                    <td rowSpan="2" className='text-center intermediate'style={{paddingTop:'40px'}}>Intermediate Coaching</td>
+                                    <td colSpan="2" className='text-center intermediate pt-4'>Intermediate Coaching</td>
                                 </tr>
                                 <tr>
-                                    <td>20:00-22:00</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
+                                    <td><b>20:00-22:00</b></td>
+                                    <td colSpan="4" className='text-center open pt-3'>Open Play</td>
+                                    <td colSpan="4" className='text-center close pt-3'>Closed</td>
                                 </tr>
                             </tbody>
                         </Table>
                     </div>
                 </Row>
+                <div>
+                    <Alert className='custom-alert'>
+                        Note: The club is closed on public holidays.
+                    </Alert>
+                </div>
             </Container>
         </div>
     )
