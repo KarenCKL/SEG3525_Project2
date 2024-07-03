@@ -35,7 +35,7 @@ export default function Location() {
                         <p className='fs-5'>Tel: <a href="+123456789" className="text-black" id='phoneFooter'>+1 (234) 567-890</a></p>
                     </div>
                     <div className='ms-4'>
-                        <Button as={Link} to='/' variant="primary" className='text-white py-1 px-1 capitalize' id='bookIdbtn'>Join Now</Button>
+                        <Button as={Link} to='/signup' variant="primary" className='text-white py-1 px-1 capitalize' id='bookIdbtn'>Join Now</Button>
                     </div>
                 </Col>
             </Row>
