@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/SEG3525_Project2/static/css/main.28b9c0c9.css",
-    "main.js": "/SEG3525_Project2/static/js/main.b5bfcce6.js",
+    "main.css": "/SEG3525_Project2/static/css/main.23aed479.css",
+    "main.js": "/SEG3525_Project2/static/js/main.52fb451d.js",
     "static/js/453.1f10bbfe.chunk.js": "/SEG3525_Project2/static/js/453.1f10bbfe.chunk.js",
-    "static/media/background.png": "/SEG3525_Project2/static/media/background.7ec4b477dab1d90e7635.png",
+    "static/media/background.png": "/SEG3525_Project2/static/media/background.ba738bea4a14558d7b84.png",
     "static/media/E1.webp": "/SEG3525_Project2/static/media/E1.f99adb794a2248cc518f.webp",
     "static/media/E4.webp": "/SEG3525_Project2/static/media/E4.6685e612333fa3f291c8.webp",
     "static/media/E5.webp": "/SEG3525_Project2/static/media/E5.2c599b98dcdc3725eb8e.webp",
@@ -18,23 +18,27 @@
     "static/media/background4.jpg": "/SEG3525_Project2/static/media/background4.bd3ccc28e1534e9b7593.jpg",
     "static/media/team.jpg": "/SEG3525_Project2/static/media/team.70d99f531dba92eff8e3.jpg",
     "static/media/guide.jpeg": "/SEG3525_Project2/static/media/guide.ccc99a05d9616488477b.jpeg",
+    "static/media/coach3.jpg": "/SEG3525_Project2/static/media/coach3.df088c24d0f686e7f23a.jpg",
     "static/media/player6.jpg": "/SEG3525_Project2/static/media/player6.7da57bc00aca0afcf815.jpg",
+    "static/media/coach1.jpg": "/SEG3525_Project2/static/media/coach1.09f8d70af46280bec1f7.jpg",
     "static/media/player1.png": "/SEG3525_Project2/static/media/player1.77e7512dc7e338767dcd.png",
     "static/media/player4.jpg": "/SEG3525_Project2/static/media/player4.53842829258a4b545e71.jpg",
+    "static/media/membership.jpg": "/SEG3525_Project2/static/media/membership.f376a570b3f73a3e89af.jpg",
     "static/media/chapter2.jpg": "/SEG3525_Project2/static/media/chapter2.6b05e83d3fd65c7bd05e.jpg",
     "static/media/player3.jpg": "/SEG3525_Project2/static/media/player3.c0161bd389c83a57ee26.jpg",
+    "static/media/coach2.jpg": "/SEG3525_Project2/static/media/coach2.82d8a1e5006997177be3.jpg",
     "static/media/youtube.svg": "/SEG3525_Project2/static/media/youtube.361fd800e39dcb080516df2e39c7a994.svg",
     "index.html": "/SEG3525_Project2/index.html",
     "static/media/instagram.svg": "/SEG3525_Project2/static/media/instagram.79234b3053de69fd2ca03ff96b7b49b7.svg",
     "static/media/linkedin.svg": "/SEG3525_Project2/static/media/linkedin.98aaac02bd92377128ca210f4ee0f5c7.svg",
     "static/media/facebook.svg": "/SEG3525_Project2/static/media/facebook.9c77ac2740446eb282dfd7b913e45119.svg",
     "static/media/twitter-x.svg": "/SEG3525_Project2/static/media/twitter-x.d496046b3a16d71f6700430c9145bd16.svg",
-    "main.28b9c0c9.css.map": "/SEG3525_Project2/static/css/main.28b9c0c9.css.map",
-    "main.b5bfcce6.js.map": "/SEG3525_Project2/static/js/main.b5bfcce6.js.map",
+    "main.23aed479.css.map": "/SEG3525_Project2/static/css/main.23aed479.css.map",
+    "main.52fb451d.js.map": "/SEG3525_Project2/static/js/main.52fb451d.js.map",
     "453.1f10bbfe.chunk.js.map": "/SEG3525_Project2/static/js/453.1f10bbfe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.28b9c0c9.css",
-    "static/js/main.b5bfcce6.js"
+    "static/css/main.23aed479.css",
+    "static/js/main.52fb451d.js"
   ]
 }
